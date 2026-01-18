@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Module | Atlas Novus</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://ik.imagekit.io/cbctech/Pink%20Minimal%20Beauty%20Organic%20Cosmetics%20Circle%20Logo%20(1).png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-body: #F5F5F7;
+            --text-primary: #1D1D1F;
+            --accent-blue: #0071E3;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .module-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .module-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+        }
+    </style>
+</head>
+<body class="pb-20">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-semibold tracking-tight flex items-center gap-2">
+                <i class="ph ph-globe-hemisphere-east text-2xl"></i>
+                Atlas Novus
+            </a>
+            <span class="text-xs font-medium text-gray-500 uppercase tracking-wider">Participant Access</span>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-12 px-6 text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium mb-6">
+            <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
+            Confirmed Attendee
+        </div>
+        <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">Your Workshop Module</h1>
+        <p class="text-lg text-gray-500">
+            Everything you need to prepare for January 30th. Review the agenda and preparation checklist below.
+        </p>
+    </header>
+
+    <!-- The 2-Hour Core Module Breakdown -->
+    <section class="px-6 mb-16">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-xl font-semibold mb-6 flex items-center gap-2">
+                <i class="ph ph-clock text-gray-400"></i> The Core Curriculum
+            </h2>
+            
+            <div class="space-y-4">
+                <!-- Module 1 -->
+                <div class="module-card bg-white p-6 rounded-2xl border border-gray-100 flex flex-col md:flex-row gap-6">
+                    <div class="flex-shrink-0 flex flex-col items-center">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Part 1</span>
+                        <span class="text-lg font-semibold text-black">14:15</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-blue-600 mb-2">The Atlas Novus Framework</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                            Deconstructing Western commercialization biases. We will map the three critical axes for ASEAN deep-tech:
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li class="flex items-center gap-2"><i class="ph ph-check-circle text-green-500"></i> Sovereignty Pathways</li>
+                            <li class="flex items-center gap-2"><i class="ph ph-check-circle text-green-500"></i> Cultural-Economic Fit</li>
+                            <li class="flex items-center gap-2"><i class="ph ph-check-circle text-green-500"></i> Epistemic Foundations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="module-card bg-white p-6 rounded-2xl border border-gray-100 flex flex-col md:flex-row gap-6">
+                    <div class="flex-shrink-0 flex flex-col items-center">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Part 2</span>
+                        <span class="text-lg font-semibold text-black">15:15</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-blue-600 mb-2">Live Case Study: Space-Tech</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            A forensic analysis of space-based energy commercialization. We will walk through the actual "Valley of Death" in ASEAN and how institutional partnerships create sovereign moats.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="module-card bg-white p-6 rounded-2xl border border-gray-100 flex flex-col md:flex-row gap-6 opacity-75">
+                    <div class="flex-shrink-0 flex flex-col items-center">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Part 3</span>
+                        <span class="text-lg font-semibold text-black">16:15</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Guided Application</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            You will apply the framework to your own domain. Peer review and 1-on-1 feedback from facilitators.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Logistics -->
+    <section class="px-6 mb-20">
+        <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
+            <!-- Prep -->
+            <div class="bg-gray-900 text-white p-8 rounded-3xl">
+                <i class="ph ph-backpack text-3xl mb-4 text-gray-400"></i>
+                <h3 class="text-lg font-semibold mb-4">What to Bring</h3>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li class="flex gap-3">
+                        <span class="bg-gray-700 w-5 h-5 rounded-full flex items-center justify-center text-xs">1</span>
+                        Laptop or Tablet for digital mapping.
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="bg-gray-700 w-5 h-5 rounded-full flex items-center justify-center text-xs">2</span>
+                        One specific technology challenge you are currently facing.
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="bg-gray-700 w-5 h-5 rounded-full flex items-center justify-center text-xs">3</span>
+                        Payment receipt (digital copy on phone).
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Venue -->
+            <div class="bg-white border border-gray-200 p-8 rounded-3xl">
+                <i class="ph ph-map-pin text-3xl mb-4 text-blue-600"></i>
+                <h3 class="text-lg font-semibold mb-4 text-black">Location Details</h3>
+                <p class="text-sm text-gray-600 mb-2 font-medium">Atlas Novus Studio (Beta)</p>
+                <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                    Level 3, Co-labs Coworking<br>
+                    The Starling Mall, Damansara Uptown<br>
+                    Petaling Jaya, Selangor
+                </p>
+                <a href="#" class="text-xs font-bold text-blue-600 uppercase tracking-wide hover:underline">Get Directions -></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center px-6">
+        <p class="text-sm text-gray-400 mb-2">Need to make changes?</p>
+        <a href="mailto:hello@atlasnovus.co" class="text-sm font-medium text-black underline hover:text-blue-600">Contact Support</a>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grant Eligibility & Gap Analysis | Deeptech Initiative</title>
+    
+    <!-- SEO & Social Meta Tags -->
+    <meta name="description" content="Check your startup's eligibility for Malaysian government grants (MOSTI, Cradle) in 30 seconds. Get a detailed gap analysis and roadmap to funding with Deeptech Initiative.">
+    <meta name="keywords" content="Grant Audit, MOSTI Grant, Cradle Fund, Startup Funding Malaysia, Deeptech Grants, TRL Assessment">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Grant Eligibility & Gap Analysis | Deeptech Initiative">
+    <meta property="og:description" content="Stop wasting hours on grants you can't win. Check your eligibility against hidden mandates on Equity, TRL, and IP ownership before you apply.">
+    <meta property="og:image" content="https://ik.imagekit.io/cbctech/Black%20and%20White%20Simple%20Minimalist%20Futuristic%20Gaming%20YouTube%20Banner.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grant Eligibility & Gap Analysis | Deeptech Initiative">
+    <meta name="twitter:description" content="Stop wasting hours on grants you can't win. Check your eligibility against hidden mandates on Equity, TRL, and IP ownership before you apply.">
+    <meta name="twitter:image" content="https://ik.imagekit.io/cbctech/Black%20and%20White%20Simple%20Minimalist%20Futuristic%20Gaming%20YouTube%20Banner.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://ik.imagekit.io/cbctech/Pink%20Minimal%20Beauty%20Organic%20Cosmetics%20Circle%20Logo%20(1).png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-cream: #FFFDF7;
+            --text-primary: #1C1917;
+            --accent-red: #D93025;
+            --accent-red-hover: #B91C1C;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .btn-red {
+            background-color: var(--accent-red);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-red:hover {
+            background-color: var(--accent-red-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(217, 48, 37, 0.2);
+        }
+
+        .glass-nav {
+            background: rgba(255, 253, 247, 0.9);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Feature Card */
+        .feature-card {
+            border-left: 1px solid #E7E5E4;
+            padding-left: 2rem;
+            transition: border-color 0.3s ease;
+        }
+        .feature-card:hover {
+            border-left-color: var(--accent-red);
+        }
+
+        /* Scorecard Mockup */
+        .scorecard-mockup {
+            background: white;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+            border: 1px solid #E7E5E4;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* Pulse Checker Styles */
+        .checker-box {
+            background: white;
+            border: 1px solid #E7E5E4;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .input-group label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #44403C;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid #D6D3D1;
+            background-color: #FAFAF9;
+            color: #1C1917;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .input-group select:focus {
+            border-color: var(--accent-red);
+            ring: 2px solid rgba(217, 48, 37, 0.1);
+        }
+        .result-panel {
+            border-left: 4px solid;
+            padding: 1.5rem;
+            background-color: #FAFAF9;
+            border-radius: 0 8px 8px 0;
+        }
+        .result-panel.pass { border-color: #16A34A; background-color: #F0FDF4; }
+        .result-panel.warn { border-color: #EA580C; background-color: #FFF7ED; }
+        .result-panel.fail { border-color: #DC2626; background-color: #FEF2F2; }
+
+        /* Modal Transitions */
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .modal.hidden-modal {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .modal.hidden-modal .modal-content {
+            transform: scale(0.95) translateY(10px);
+        }
+        .modal.visible-modal {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .modal.visible-modal .modal-content {
+            transform: scale(1) translateY(0);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-lg font-bold tracking-tight flex items-center gap-2 text-stone-900">
+                <span class="w-2 h-2 bg-red-600 rounded-full"></span>
+                Deeptech Initiative
+            </a>
+            <a href="#audit" class="text-xs font-bold text-red-700 uppercase tracking-widest hover:text-red-900">
+                Book Audit
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6 max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-stone-100 text-stone-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6 border border-stone-200">
+            <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+            Pre-Submission Audit
+        </div>
+        <h1 class="text-5xl md:text-7xl text-stone-900 leading-[1.1] mb-6">
+            Stop Wasting Hours on Grants You Can't Win.
+        </h1>
+        <p class="text-xl text-stone-500 leading-relaxed max-w-2xl mx-auto mb-10 font-light">
+            Hidden mandates on Equity, TRL, and IP ownership kill 60% of deeptech applications before they are even read. We check your eligibility <strong>before</strong> you write a single word.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#free-checker" class="bg-white text-stone-900 border border-stone-300 px-8 py-4 rounded-lg text-lg font-medium hover:border-stone-400 transition-colors">
+                Free Pulse Check
+            </a>
+            <a href="#audit" class="btn-red px-10 py-4 rounded-lg text-lg font-medium shadow-xl">
+                Get Full Scorecard - RM 499
+            </a>
+        </div>
+    </section>
+
+    <!-- Free Checker Section -->
+    <section id="free-checker" class="py-20 px-6 bg-[#FAFAF9] border-y border-stone-200">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl text-stone-900 mb-2">Free Eligibility Pulse Check</h2>
+                <p class="text-stone-500">Answer 9 key questions to benchmark your startup against National Grant Mandates.</p>
+            </div>
+
+            <div class="checker-box grid md:grid-cols-5 gap-10">
+                <!-- Form (Spans 3 cols) -->
+                <div class="md:col-span-3 space-y-5">
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div class="input-group">
+                            <label>1. Company Structure</label>
+                            <select id="entityType">
+                                <option value="">Select...</option>
+                                <option value="sdn_bhd">Sdn Bhd (Private Limited)</option>
+                                <option value="enterprise">Enterprise / Sole Prop</option>
+                                <option value="llp">LLP</option>
+                                <option value="none">Not Registered</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>2. Malaysian Equity</label>
+                            <select id="equity">
+                                <option value="">Select...</option>
+                                <option value="100">100% Malaysian</option>
+                                <option value="51_plus">> 51% Malaysian</option>
+                                <option value="51_minus">< 51% Malaysian</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>3. Paid-Up Capital</label>
+                            <select id="capital">
+                                <option value="">Select...</option>
+                                <option value="50k_plus">> RM 50,000</option>
+                                <option value="10k_plus">RM 10k - RM 50k</option>
+                                <option value="10k_minus">< RM 10,000</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>4. Tech Readiness (TRL)</label>
+                            <select id="trl">
+                                <option value="">Select...</option>
+                                <option value="1_3">TRL 1-3 (Lab/Concept)</option>
+                                <option value="4_6">TRL 4-6 (Prototype)</option>
+                                <option value="7_9">TRL 7-9 (Commercial)</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Deep Dive Questions -->
+                        <div class="input-group">
+                            <label>5. IP Ownership Status</label>
+                            <select id="ipStatus">
+                                <option value="">Select...</option>
+                                <option value="owned">Company Owns IP</option>
+                                <option value="uni_owned">University Owns IP</option>
+                                <option value="licensing">Licensing Agreement</option>
+                                <option value="none">No IP / Trade Secret</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>6. Team Composition</label>
+                            <select id="teamComp">
+                                <option value="">Select...</option>
+                                <option value="balanced">Tech + Biz Founders</option>
+                                <option value="tech_only">Tech Founders Only</option>
+                                <option value="biz_only">Biz Founders Only</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>7. Market Validation</label>
+                            <select id="marketVal">
+                                <option value="">Select...</option>
+                                <option value="revenue">Paying Customers</option>
+                                <option value="loi">LOIs / MOUs Signed</option>
+                                <option value="survey">Surveys / Interviews</option>
+                                <option value="none">None yet</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>8. Financial Audits</label>
+                            <select id="auditStatus">
+                                <option value="">Select...</option>
+                                <option value="audited">Audited Accounts (1+ Yrs)</option>
+                                <option value="management">Management Accounts</option>
+                                <option value="none">No Accounts</option>
+                            </select>
+                        </div>
+                        <div class="input-group md:col-span-2">
+                            <label>9. National Policy Alignment (MySTIE)</label>
+                            <select id="policyAlign">
+                                <option value="">Select...</option>
+                                <option value="strong">Direct Fit (e.g. Food Sec, Energy)</option>
+                                <option value="weak">Loose Connection</option>
+                                <option value="unknown">What is MySTIE?</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button onclick="runPulseCheck()" class="w-full bg-stone-900 text-white py-3 rounded-lg font-medium hover:bg-black transition-colors mt-4">
+                        Generate Action Plan
+                    </button>
+                </div>
+
+                <!-- Results Area (Spans 2 cols) -->
+                <div class="md:col-span-2 flex flex-col justify-start">
+                    <!-- Default State -->
+                    <div id="resultDefault" class="text-center text-stone-400 py-20 bg-stone-50 rounded-xl border border-dashed border-stone-200 h-full flex flex-col items-center justify-center">
+                        <i class="ph ph-clipboard-text text-4xl mb-3"></i>
+                        <p class="text-sm px-6">Complete the assessment to receive your eligibility tier and 3 critical action items.</p>
+                    </div>
+
+                    <!-- Dynamic Result -->
+                    <div id="resultContent" class="result-panel h-full hidden">
+                        <div class="mb-4">
+                            <span id="resBadge" class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-stone-200 text-stone-600">Status</span>
+                            <h3 id="resTitle" class="text-2xl font-bold mt-2 mb-1"></h3>
+                            <p id="resText" class="text-sm text-stone-600 leading-relaxed"></p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-xl border border-stone-200 mb-6 shadow-sm">
+                            <p class="text-xs font-bold text-stone-400 uppercase mb-3 border-b border-stone-100 pb-2">Your Critical Action Items</p>
+                            <ul id="resActionList" class="text-sm text-stone-800 space-y-3 pl-0">
+                                <!-- JS will populate this -->
+                            </ul>
+                        </div>
+
+                        <div class="mt-auto">
+                            <p class="text-xs text-stone-500 mb-3">Need help executing these items?</p>
+                            <a href="#audit" class="block w-full text-center bg-red-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-red-700 transition-colors">
+                                Book Full Audit & Roadmap
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Trap Section -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <!-- Left: The Trap -->
+            <div>
+                <h2 class="text-3xl text-stone-900 mb-6">The "Spray & Pray" Trap</h2>
+                <p class="text-stone-600 mb-6 leading-relaxed">
+                    Researchers often treat grant applications like lottery tickets—submitting to every fund (MOSTI, Cradle, MRANTI) without checking the fine print. 
+                </p>
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                        <i class="ph ph-x-circle text-red-600 text-xl mt-1"></i>
+                        <div>
+                            <strong class="text-stone-900">The TRL Mismatch:</strong> Applying for commercialization funds (TRL 7-9) with a lab prototype (TRL 4). Immediate disqualification.
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <i class="ph ph-x-circle text-red-600 text-xl mt-1"></i>
+                        <div>
+                            <strong class="text-stone-900">The Equity Trap:</strong> Missing the "51% Local Equity" requirement or having a messy cap table structure.
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <i class="ph ph-x-circle text-red-600 text-xl mt-1"></i>
+                        <div>
+                            <strong class="text-stone-900">IP Ambiguity:</strong> Failing to prove ownership rights vs. university licensing agreements.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: The Mockup -->
+            <div class="scorecard-mockup p-6 bg-stone-50 rotate-1 hover:rotate-0 transition-transform duration-500">
+                <div class="flex justify-between items-center border-b border-stone-200 pb-4 mb-4">
+                    <div>
+                        <div class="text-xs font-bold text-stone-400 uppercase">Audit Report For</div>
+                        <div class="font-bold text-stone-900">Project: Solar-X</div>
+                    </div>
+                    <div class="bg-red-100 text-red-700 px-3 py-1 rounded text-xs font-bold">NOT ELIGIBLE</div>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-stone-600">Technological Readiness</span>
+                        <span class="text-red-600 font-medium">TRL 3 (Required: TRL 6)</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-stone-600">Company Structure</span>
+                        <span class="text-green-600 font-medium">Pass (Sdn Bhd)</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-stone-600">Paid-up Capital</span>
+                        <span class="text-red-600 font-medium">RM 100 (Required: RM 10k)</span>
+                    </div>
+                </div>
+                <div class="mt-6 bg-white p-3 rounded border border-stone-200 text-xs text-stone-500">
+                    <strong>Analyst Note:</strong> Do not apply for CIP Spark yet. Your paid-up capital is insufficient. Rectify with secretary before submission deadline.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-24 px-6 bg-[#FFFDF7] border-t border-stone-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl text-center text-stone-900 mb-16">The Full Audit Process</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="feature-card">
+                    <span class="text-5xl font-serif text-stone-200 block mb-4">01</span>
+                    <h3 class="text-lg font-bold text-stone-900 mb-2">Upload Context</h3>
+                    <p class="text-sm text-stone-600">
+                        Fill out our secure "Fact Sheet". We ask for your SSM info, Cap Table structure, and current TRL evidence.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="feature-card">
+                    <span class="text-5xl font-serif text-stone-200 block mb-4">02</span>
+                    <h3 class="text-lg font-bold text-stone-900 mb-2">Analyst Review</h3>
+                    <p class="text-sm text-stone-600">
+                        A Deeptech Initiative analyst cross-references your data against the specific mandates of up to 3 target funds.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="feature-card">
+                    <span class="text-5xl font-serif text-stone-200 block mb-4">03</span>
+                    <h3 class="text-lg font-bold text-stone-900 mb-2">The Scorecard</h3>
+                    <p class="text-sm text-stone-600">
+                        Receive a "Green Light" or "Red Light" report with a checklist of missing documents (e.g., MOUs, IP Deeds).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & CTA -->
+    <section id="audit" class="py-20 px-6 bg-white border-t border-stone-200">
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="text-4xl font-serif text-stone-900 mb-6">Start Your Full Audit</h2>
+            <div class="bg-stone-50 border border-stone-200 rounded-2xl p-8 shadow-sm mb-8">
+                <div class="text-sm font-bold text-stone-400 uppercase tracking-widest mb-2">One-Time Fee</div>
+                <div class="text-5xl font-bold text-stone-900 mb-6">RM 499</div>
+                <ul class="text-left text-sm text-stone-600 space-y-3 mb-8 pl-4">
+                    <li class="flex gap-2"><i class="ph ph-check text-red-600 mt-0.5"></i> Audit against 3 Target Funds (e.g. Cradle, MOSTI)</li>
+                    <li class="flex gap-2"><i class="ph ph-check text-red-600 mt-0.5"></i> TRL Validation Assessment</li>
+                    <li class="flex gap-2"><i class="ph ph-check text-red-600 mt-0.5"></i> Document Gap Checklist</li>
+                    <li class="flex gap-2"><i class="ph ph-check text-red-600 mt-0.5"></i> 48-Hour Turnaround Time</li>
+                </ul>
+                <button onclick="openModal()" class="w-full btn-red py-4 rounded-lg font-medium text-lg">
+                    Book Eligibility Audit
+                </button>
+                <p class="text-xs text-stone-400 mt-4">100% Money-back if we miss a published requirement.</p>
+            </div>
+            
+            <div class="flex justify-center gap-6 text-xs text-stone-400">
+                <span>&copy; 2026 Deeptech Initiative</span>
+                <a href="mailto:hello@atlasnovus.co" class="hover:text-red-600 transition-colors">Contact Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAYMENT MODAL -->
+    <div id="paymentModal" class="modal hidden-modal fixed inset-0 z-[100] flex items-center justify-center px-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-stone-900/80 backdrop-blur-sm" onclick="closeModal()"></div>
+        
+        <!-- Content -->
+        <div class="modal-content relative bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+            <div class="bg-stone-50 border-b border-stone-100 p-6 flex justify-between items-center sticky top-0 z-10">
+                <h3 class="font-serif text-2xl text-stone-900">Secure Audit Booking</h3>
+                <button onclick="closeModal()" class="text-stone-400 hover:text-red-600 transition-colors">
+                    <i class="ph ph-x text-xl"></i>
+                </button>
+            </div>
+
+            <div class="p-6">
+                <form id="auditForm" class="space-y-6">
+                    <!-- Summary -->
+                    <div class="space-y-3">
+                        <label class="block text-xs font-bold text-stone-400 uppercase tracking-wider mb-2">Order Summary</label>
+                        
+                        <div class="relative p-4 bg-red-50/50 rounded-xl border border-red-100">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="font-medium text-red-900">Grant Eligibility Audit</div>
+                                    <div class="text-xs text-red-700">Pre-Submission Check • 48hr Turnaround</div>
+                                </div>
+                                <div class="font-bold text-red-900">RM 499.00</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center px-2 text-xs text-stone-500">
+                            <span>Processing Fee</span>
+                            <span>RM 2.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="flex justify-between items-center border-t border-b border-stone-100 py-4">
+                        <span class="text-stone-600 font-medium">Total Payable</span>
+                        <span class="text-3xl font-bold text-stone-900 tracking-tight font-serif">RM 501</span>
+                    </div>
+                    
+                    <!-- Method Toggle -->
+                    <div class="space-y-3">
+                         <label class="block text-xs font-bold text-stone-400 uppercase tracking-wider mb-2">Payment Method</label>
+                         <div class="flex p-1 bg-stone-100 rounded-xl">
+                             <button type="button" onclick="setPaymentMethod('chip')" id="btnChip" class="flex-1 py-2 text-sm font-medium rounded-lg bg-white text-stone-900 shadow-sm transition-all">
+                                 Online Payment
+                             </button>
+                             <button type="button" onclick="setPaymentMethod('manual')" id="btnManual" class="flex-1 py-2 text-sm font-medium rounded-lg text-stone-500 hover:text-stone-900 transition-all">
+                                 Manual Transfer
+                             </button>
+                         </div>
+                    </div>
+
+                    <!-- Chip Section -->
+                    <div id="sectionChip" class="block">
+                        <div class="p-4 bg-stone-50 border border-stone-200 rounded-xl flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm text-red-600">
+                                <i class="ph ph-credit-card text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-stone-900">Secure Checkout</div>
+                                <div class="text-xs text-stone-500">FPX, Credit Cards, E-Wallets</div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-stone-400 mt-2">Payment gateway partner: Cubic Tech</p>
+                    </div>
+
+                    <!-- Manual Section -->
+                    <div id="sectionManual" class="hidden">
+                        <div class="bg-stone-900 text-white p-4 rounded-xl mb-4">
+                            <div class="text-xs text-stone-400 uppercase tracking-wider mb-2">Bank Transfer Details</div>
+                            <div class="flex items-center gap-3 mb-1">
+                                <i class="ph ph-bank text-xl text-red-500"></i>
+                                <span class="font-medium">Maybank</span>
+                            </div>
+                            <div class="text-xl font-mono tracking-wider mb-2">5628 7051 3533</div>
+                            <div class="text-xs text-stone-400">Cubic Tech</div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-1">Upload Receipt</label>
+                            <input type="file" id="receiptFile" accept="image/*,.pdf" class="block w-full text-sm text-stone-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-red-50 file:text-red-700 hover:file:bg-red-100 cursor-pointer">
+                        </div>
+                    </div>
+
+                    <!-- User Fields -->
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-1">Full Name</label>
+                                <input type="text" name="user_name" required class="w-full px-4 py-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-1">Phone</label>
+                                <input type="tel" name="user_phone" class="w-full px-4 py-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-1">Email Address</label>
+                            <input type="email" name="user_email" required class="w-full px-4 py-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all">
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="pt-2">
+                        <button type="submit" id="submitBtn" class="w-full btn-red py-3 rounded-xl font-medium flex justify-center items-center gap-2">
+                            <span>Proceed to Payment</span>
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+                        <p id="statusMessage" class="text-center text-sm mt-3 text-stone-500"></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // --- Pulse Checker ---
+        function runPulseCheck() {
+            // 1. Capture Inputs
+            const inputs = {
+                entity: document.getElementById('entityType').value,
+                equity: document.getElementById('equity').value,
+                capital: document.getElementById('capital').value,
+                trl: document.getElementById('trl').value,
+                ip: document.getElementById('ipStatus').value,
+                team: document.getElementById('teamComp').value,
+                market: document.getElementById('marketVal').value,
+                audit: document.getElementById('auditStatus').value,
+                policy: document.getElementById('policyAlign').value
+            };
+
+            // 2. Validate
+            for (let key in inputs) {
+                if (!inputs[key]) {
+                    alert("Please answer all 9 questions for an accurate pulse check.");
+                    return;
+                }
+            }
+
+            // 3. Logic Engine
+            const resultBox = document.getElementById('resultContent');
+            const defaultBox = document.getElementById('resultDefault');
+            const title = document.getElementById('resTitle');
+            const text = document.getElementById('resText');
+            const badge = document.getElementById('resBadge');
+            const list = document.getElementById('resActionList');
+
+            defaultBox.style.display = 'none';
+            resultBox.style.display = 'flex';
+            resultBox.classList.remove('hidden');
+            resultBox.className = 'result-panel h-full flex flex-col'; // Reset
+
+            let actions = [];
+            let status = "ready"; // ready, caution, critical
+
+            // Critical Flags
+            if (inputs.entity !== 'sdn_bhd') {
+                status = "critical";
+                actions.push(`<li class="flex gap-2"><i class="ph ph-warning-circle text-red-600 mt-0.5"></i> <strong>Incorporate Now:</strong> Grants require a Sdn Bhd. Enterprise/Sole Prop are ineligible.</li>`);
+            }
+            if (inputs.equity === '51_minus') {
+                status = "critical";
+                actions.push(`<li class="flex gap-2"><i class="ph ph-warning-circle text-red-600 mt-0.5"></i> <strong>Restructure Equity:</strong> You must have >51% Malaysian ownership to qualify for national funds.</li>`);
+            }
+            
+            // Major Flags (High Risk)
+            if (inputs.capital === '10k_minus' && status !== "critical") {
+                status = "caution";
+                actions.push(`<li class="flex gap-2"><i class="ph ph-info text-orange-600 mt-0.5"></i> <strong>Increase Paid-Up Capital:</strong> Raise to RM 10k minimum. Low capital signals lack of commitment to evaluators.</li>`);
+            }
+            if (inputs.ip === 'uni_owned' || inputs.ip === 'none') {
+                if (status !== "critical") status = "caution";
+                actions.push(`<li class="flex gap-2"><i class="ph ph-file-lock text-orange-600 mt-0.5"></i> <strong>Secure IP Assignment:</strong> If University owns IP, get an option-to-license letter immediately. Without clear IP rights, you are uninvestable.</li>`);
+            }
+
+            // Strategic Gaps (Optimization)
+            if (inputs.policy === 'unknown' || inputs.policy === 'weak') {
+                actions.push(`<li class="flex gap-2"><i class="ph ph-book-bookmark text-blue-600 mt-0.5"></i> <strong>Align with MySTIE:</strong> Map your tech to the 10-10 MySTIE Framework. Grants are awarded to solve National Grand Challenges, not just for cool tech.</li>`);
+            }
+            if (inputs.team === 'tech_only') {
+                actions.push(`<li class="flex gap-2"><i class="ph ph-users text-blue-600 mt-0.5"></i> <strong>Recruit Commercial Lead:</strong> Evaluators penalize "Lab Projects". Add a business co-founder or advisor to the org chart.</li>`);
+            }
+            if (inputs.audit === 'none' && (inputs.trl === '7_9' || inputs.trl === '4_6')) {
+                actions.push(`<li class="flex gap-2"><i class="ph ph-calculator text-blue-600 mt-0.5"></i> <strong>Prepare Management Accounts:</strong> Even if unaudited, you need organized YTD financials to prove you can manage public funds.</li>`);
+            }
+
+            // Fill remaining slots
+            if (actions.length < 3) {
+                if (inputs.trl === '1_3') actions.push(`<li class="flex gap-2"><i class="ph ph-check-circle text-green-600 mt-0.5"></i> <strong>Target Pre-Seed:</strong> Focus solely on CIP Spark or university grants. You are too early for commercialization funds.</li>`);
+                if (inputs.market === 'none') actions.push(`<li class="flex gap-2"><i class="ph ph-check-circle text-green-600 mt-0.5"></i> <strong>Get LOIs:</strong> Secure 3 Letters of Intent. "Market Pull" validates grants better than "Tech Push".</li>`);
+            }
+
+            // Display Logic
+            list.innerHTML = actions.slice(0, 3).join('');
+
+            if (status === "critical") {
+                resultBox.classList.add('fail');
+                title.innerText = "Ineligible (Critical Issues)";
+                title.className = "text-2xl font-bold mt-2 mb-1 text-red-700";
+                text.innerText = "Your current structure disqualifies you from 95% of government grants. You must fix the critical items below before applying.";
+                badge.className = "text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-red-100 text-red-700";
+                badge.innerText = "Action Required";
+            } else if (status === "caution") {
+                resultBox.classList.add('warn');
+                title.innerText = "High Risk Profile";
+                title.className = "text-2xl font-bold mt-2 mb-1 text-orange-700";
+                text.innerText = "You meet the basic criteria, but have significant gaps (IP, Capital, or Team) that will likely cause rejection during due diligence.";
+                badge.className = "text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-orange-100 text-orange-700";
+                badge.innerText = "Caution";
+            } else {
+                resultBox.classList.add('pass');
+                title.innerText = "Grant Ready";
+                title.className = "text-2xl font-bold mt-2 mb-1 text-green-700";
+                text.innerText = "You have a strong structural foundation. The next step is crafting the narrative to match the specific fund's secret scorecard.";
+                badge.className = "text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-green-100 text-green-700";
+                badge.innerText = "Eligible";
+            }
+        }
+
+        // --- Payment & Modal Logic ---
+        const modal = document.getElementById('paymentModal');
+        let paymentMethod = 'chip';
+        
+        // CONFIG
+        const CLOUDFLARE_WORKER_URL = "https://flat-haze-25a0.shalomshafa.workers.dev";
+        const CHIP_BRAND_ID = "9dd18261-e178-43a2-8e66-c175e92bfaca"; 
+        const SENDER_EMAIL = "hai@shafiranoh.com"; 
+        const ADMIN_EMAIL = "hai@shafiranoh.com";
+        const TOTAL_AMOUNT = 501.00; // 499 + 2
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            // Trigger reflow
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div.relative').classList.remove('scale-95');
+            modal.querySelector('div.relative').classList.add('scale-100');
+            modal.style.pointerEvents = 'auto';
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modal.querySelector('div.relative').classList.remove('scale-100');
+            modal.querySelector('div.relative').classList.add('scale-95');
+            modal.style.pointerEvents = 'none';
+            document.body.style.overflow = ''; 
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function setPaymentMethod(method) {
+            paymentMethod = method;
+            const btnChip = document.getElementById('btnChip');
+            const btnManual = document.getElementById('btnManual');
+            const secChip = document.getElementById('sectionChip');
+            const secManual = document.getElementById('sectionManual');
+            const submitBtn = document.getElementById('submitBtn');
+            const receiptFile = document.getElementById('receiptFile');
+
+            if (method === 'chip') {
+                btnChip.classList.add('bg-white', 'text-stone-900', 'shadow-sm');
+                btnChip.classList.remove('text-stone-500');
+                btnManual.classList.remove('bg-white', 'text-stone-900', 'shadow-sm');
+                btnManual.classList.add('text-stone-500');
+                
+                secChip.classList.remove('hidden');
+                secManual.classList.add('hidden');
+                submitBtn.innerHTML = '<span>Pay Now with Chip</span><i class="ph ph-credit-card"></i>';
+                receiptFile.required = false;
+            } else {
+                btnManual.classList.add('bg-white', 'text-stone-900', 'shadow-sm');
+                btnManual.classList.remove('text-stone-500');
+                btnChip.classList.remove('bg-white', 'text-stone-900', 'shadow-sm');
+                btnChip.classList.add('text-stone-500');
+
+                secManual.classList.remove('hidden');
+                secChip.classList.add('hidden');
+                submitBtn.innerHTML = '<span>Confirm Transfer</span><i class="ph ph-paper-plane-right"></i>';
+                receiptFile.required = true;
+            }
+        }
+
+        document.getElementById('auditForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = '<i class="ph ph-spinner animate-spin"></i> Processing...';
+            btn.disabled = true;
+
+            if (paymentMethod === 'chip') {
+                processChipPayment(this, btn);
+            } else {
+                processManualPayment(this, btn);
+            }
+        });
+
+        async function processChipPayment(form, btn) {
+            const formData = new FormData(form);
+            const status = document.getElementById('statusMessage');
+
+            // Products for Chip
+            const products = [
+                { name: "Grant Eligibility Audit", price: 49900, quantity: 1 },
+                { name: "Processing Fee", price: 200, quantity: 1 }
+            ];
+
+            const payload = {
+                action: 'create_payment',
+                brand_id: CHIP_BRAND_ID,
+                client: {
+                    email: formData.get('user_email'),
+                    full_name: formData.get('user_name'),
+                    phone: formData.get('user_phone') || undefined
+                },
+                purchase: {
+                    currency: "MYR",
+                    products: products,
+                    timezone: "Asia/Kuala_Lumpur"
+                },
+                success_redirect: "https://webdevsha.github.io/atlas/success.html",
+                failure_redirect: "https://webdevsha.github.io/atlas/failed.html"
+            };
+
+            try {
+                const response = await fetch(CLOUDFLARE_WORKER_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.checkout_url) {
+                    window.location.href = data.checkout_url;
+                } else {
+                    throw new Error(data.message || "Failed to create payment link");
+                }
+            } catch (error) {
+                console.error("Payment Error:", error);
+                btn.innerHTML = 'Try Again';
+                btn.disabled = false;
+                status.innerText = "Connection failed. Please try manual transfer.";
+                status.classList.add('text-red-600');
+            }
+        }
+
+        async function processManualPayment(form, btn) {
+            const formData = new FormData(form);
+            const status = document.getElementById('statusMessage');
+            const file = document.getElementById('receiptFile').files[0];
+            const itemsPurchased = "Grant Eligibility Audit + Processing Fee";
+
+            const sendToWorker = async (cleanBase64 = null, fileName = null) => {
+                const payload = {
+                    action: 'send_email',
+                    user_name: formData.get('user_name'),
+                    user_email: formData.get('user_email'),
+                    total_amount: `RM ${TOTAL_AMOUNT}`,
+                    items_purchased: itemsPurchased,
+                    file_name: fileName,
+                    file_content: cleanBase64,
+                    sender_email: SENDER_EMAIL,
+                    admin_email: ADMIN_EMAIL
+                };
+
+                try {
+                    const response = await fetch(CLOUDFLARE_WORKER_URL, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.ok) {
+                        btn.innerHTML = '<i class="ph ph-check"></i> Success!';
+                        btn.classList.remove('btn-red');
+                        btn.classList.add('bg-green-600', 'text-white');
+                        status.innerText = "Receipt received. Confirmation sent to email.";
+                        status.className = "text-center text-sm mt-3 text-green-600";
+                        setTimeout(() => {
+                            closeModal();
+                            form.reset();
+                            btn.disabled = false;
+                            btn.innerHTML = 'Proceed to Payment';
+                            btn.classList.remove('bg-green-600');
+                            btn.classList.add('btn-red');
+                            status.innerText = "";
+                        }, 3000);
+                    } else {
+                        throw new Error("Email worker failed");
+                    }
+                } catch (error) {
+                    btn.innerHTML = 'Try Again';
+                    btn.disabled = false;
+                    status.innerText = "Error sending receipt. Check file size.";
+                    status.className = "text-center text-sm mt-3 text-red-600";
+                }
+            };
+
+            if (file) {
+                if (file.size > 2 * 1024 * 1024) {
+                    btn.innerHTML = 'File Too Large';
+                    btn.disabled = false;
+                    status.innerText = "File > 2MB. Please compress.";
+                    status.className = "text-center text-sm mt-3 text-red-600";
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = () => sendToWorker(reader.result.split(',')[1], file.name);
+                reader.onerror = () => sendToWorker(null, null);
+                reader.readAsDataURL(file);
+            } else {
+                sendToWorker(null, null);
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 name = "flat-haze-25a0"
-main = "worker.js"
+main = "./worker.js"
 compatibility_date = "2026-01-21"
 
 # NOTE: Do NOT put your API keys (CHIP_SECRET_KEY, BREVO_API_KEY) in this file.

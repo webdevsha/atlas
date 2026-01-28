@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Deeptech Initiative//Sprint//EN
+BEGIN:VEVENT
+UID:sprint-jan31@deeptechinitiative.com
+DTSTAMP:20240128T000000Z
+DTSTART:20260131T030000Z
+DTEND:20260131T040000Z
+SUMMARY:Deeptech Strategy Sprint
+DESCRIPTION:Join Razlan Dhamir for the 60-minute Deeptech Strategy Sprint.\n\nZoom Link: https://us06web.zoom.us/j/87175195580?pwd=D4GZXonF8wMF4A988D5Rbu6aKUEcyi.1\n\nPrepare your questions and see you there!
+LOCATION:Zoom Meeting
+END:VEVENT
+END:VCALENDAR

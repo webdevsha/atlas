@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 01: From Lab Bench to Funding | Deeptech Initiative</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://ik.imagekit.io/cbctech/Pink%20Minimal%20Beauty%20Organic%20Cosmetics%20Circle%20Logo%20(1).png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-cream: #FFFDF7;
+            --text-primary: #1C1917;
+            --text-secondary: #57534E;
+            --accent-red: #D93025;
+            --accent-red-hover: #B91C1C;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        /* Slide Classes */
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 2rem;
+            border-bottom: 1px solid #E7E5E4;
+            position: relative;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #D93025;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .content-box {
+            background: white;
+            border: 1px solid #E7E5E4;
+            border-left: 4px solid var(--accent-red);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+        }
+
+        /* Matrix Table Style */
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .matrix-table th {
+            background-color: #FEF2F2;
+            color: #991B1B;
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid #FECACA;
+        }
+        .matrix-table td {
+            background-color: white;
+            padding: 1rem;
+            border: 1px solid #E5E7EB;
+            vertical-align: top;
+        }
+
+        .highlight-text {
+            background: linear-gradient(120deg, #fecaca 0%, #fecaca 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+            transition: background-size 0.25s ease-in;
+        }
+        .slide:hover .highlight-text {
+            background-size: 100% 88%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#FFFDF7]/90 backdrop-blur-md border-b border-stone-200 h-14 flex items-center px-6 justify-between">
+        <a href="index.html" class="font-bold text-stone-900 tracking-tight">Deeptech Initiative</a>
+        <span class="text-xs font-medium text-stone-500">Sprint 01: Lab Bench to Funding</span>
+    </nav>
+
+    <!-- Slide 1: Title -->
+    <section class="slide text-center">
+        <div class="max-w-4xl mx-auto">
+            <span class="inline-block bg-red-100 text-red-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-8">
+                Sprint 01 Module
+            </span>
+            <h1 class="text-5xl md:text-8xl text-stone-900 leading-none mb-8">
+                The Deeptech Founder’s<br><span class="text-red-600">Blueprint</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-stone-500 max-w-2xl mx-auto leading-relaxed">
+                How to align a massive "Moonshot" vision with immediate, grant-fundable milestones.
+            </p>
+            <div class="mt-12 animate-bounce text-stone-400">
+                <i class="ph ph-arrow-down text-3xl"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: The Trap (Definition) -->
+    <section class="slide">
+        <div class="slide-number">01 / The Context</div>
+        <div class="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl text-stone-900 mb-6">The "Science Project" Trap</h2>
+                <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                    Most researchers fail to transition from "Novelty" to "Utility".
+                    <br><br>
+                    Investors do not fund science experiments. They fund <span class="highlight-text">de-risked venture assets</span> that have a path to monopoly.
+                </p>
+            </div>
+            
+            <div class="grid gap-4">
+                <div class="content-box mt-0 border-l-stone-400 opacity-60">
+                    <h3 class="text-lg font-bold text-stone-900 mb-2">Science Project (The Lab)</h3>
+                    <ul class="text-sm text-stone-600 list-disc pl-4 space-y-1">
+                        <li><strong>Goal:</strong> Maximize Technical Novelty</li>
+                        <li><strong>Funding:</strong> Grants (Endless Cycle)</li>
+                        <li><strong>Risk:</strong> "Will it work?" (Technical Risk)</li>
+                        <li><strong>Outcome:</strong> A Paper / Thesis</li>
+                    </ul>
+                </div>
+                <div class="content-box mt-0 border-l-red-600 scale-105 shadow-xl">
+                    <h3 class="text-lg font-bold text-stone-900 mb-2">Venture Asset (The Goal)</h3>
+                    <ul class="text-sm text-stone-600 list-disc pl-4 space-y-1">
+                        <li><strong>Goal:</strong> Maximize Sovereign Utility</li>
+                        <li><strong>Funding:</strong> Contracts & Equity</li>
+                        <li><strong>Risk:</strong> "Will they buy?" (Market/Reg Risk)</li>
+                        <li><strong>Outcome:</strong> A Commercial Monopoly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2.1: Defining Deeptech -->
+    <section class="slide bg-stone-50">
+        <div class="slide-number">01 / The Definition</div>
+        <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-4xl text-stone-900 mb-8">Deeptech <span class="text-red-600">!=</span> High-Tech Software</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                        Deeptech refers to startups whose business model is built on tangible engineering innovation or scientific discovery.
+                    </p>
+                    <div class="bg-white p-6 rounded-lg border border-stone-200 shadow-sm">
+                        <h4 class="font-bold text-stone-900 mb-2">The BCG Definition</h4>
+                        <p class="text-sm text-stone-500 italic">"Deep tech companies are built on tangible scientific discoveries or engineering innovations. They solve big problems and have no existing market solution."</p>
+                        <p class="text-xs text-stone-400 mt-2">— Boston Consulting Group (BCG)</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-4">The Fundamental Difference</h3>
+                    <table class="w-full text-sm text-left">
+                        <tr class="border-b border-stone-300">
+                            <th class="py-2 text-stone-500 font-normal">Feature</th>
+                            <th class="py-2 text-stone-900">General Tech (SaaS)</th>
+                            <th class="py-2 text-red-700">Deeptech</th>
+                        </tr>
+                        <tr class="border-b border-stone-200">
+                            <td class="py-3 font-bold text-stone-900">Primary Risk</td>
+                            <td class="py-3 text-stone-600">Market Risk</td>
+                            <td class="py-3 text-red-600 font-bold">Technical Risk</td>
+                        </tr>
+                        <tr class="border-b border-stone-200">
+                            <td class="py-3 font-bold text-stone-900">Time to Market</td>
+                            <td class="py-3 text-stone-600">6-18 Months</td>
+                            <td class="py-3 text-stone-600">3-10 Years</td>
+                        </tr>
+                        <tr class="border-b border-stone-200">
+                            <td class="py-3 font-bold text-stone-900">IP Protection</td>
+                            <td class="py-3 text-stone-600">Low / Speed</td>
+                            <td class="py-3 text-stone-600">High / Patents</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2.2: The Malaysian Gap -->
+    <section class="slide">
+        <div class="slide-number">01 / The Malaysian Gap</div>
+        <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-4xl text-stone-900 mb-12">The "Valley of Death" in Malaysia</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="content-box mt-0 border-l-stone-800">
+                    <i class="ph ph-flask text-3xl text-stone-800 mb-3"></i>
+                    <h4 class="font-bold text-stone-900 mb-2">High Output, Low Outcome</h4>
+                    <p class="text-sm text-stone-600">
+                        Malaysia ranks high in scientific publications (22nd globally in 2020), but commercialization rates from universities remain below 5%.
+                    </p>
+                    <p class="text-[10px] text-stone-400 mt-2">Source: Academy of Sciences Malaysia (ASM)</p>
+                </div>
+                <div class="content-box mt-0 border-l-red-600">
+                    <i class="ph ph-currency-dollar-simple text-3xl text-red-600 mb-3"></i>
+                    <h4 class="font-bold text-stone-900 mb-2">The Funding Gap</h4>
+                    <p class="text-sm text-stone-600">
+                        Government grants (Cradle/MOSTI) cover up to TRL 4-5. VCs demand TRL 8-9 (Revenue). There is almost zero capital for TRL 6-7 (Pilot/Industrialization).
+                    </p>
+                    <p class="text-[10px] text-stone-400 mt-2">Source: 12th Malaysia Plan Analysis</p>
+                </div>
+                <div class="content-box mt-0 border-l-stone-800">
+                    <i class="ph ph-scales text-3xl text-stone-800 mb-3"></i>
+                    <h4 class="font-bold text-stone-900 mb-2">Regulatory Lag</h4>
+                    <p class="text-sm text-stone-600">
+                        Policies often lag innovation by 3-5 years (e.g., Drone laws, AI frameworks), forcing startups to move abroad to test.
+                    </p>
+                    <p class="text-[10px] text-stone-400 mt-2">Source: Khazanah Research Institute</p>
+                </div>
+            </div>
+
+            <div class="bg-red-50 p-6 rounded-xl border border-red-100 flex gap-4 items-center">
+                <i class="ph ph-warning-circle text-2xl text-red-600"></i>
+                <p class="text-sm text-red-900 font-medium">
+                    <strong>The Reality Check:</strong> If you build a Deeptech startup in Malaysia using a SaaS playbook, you will run out of money at TRL 5. You need a "Sovereign Utility" strategy to bridge the gap.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Historical Case Studies -->
+    <section class="slide bg-stone-900 text-white">
+        <div class="slide-number text-stone-500">02 / Historical Context</div>
+        <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-4xl mb-12">Deeptech is Born from <span class="text-red-500">Sovereign Need</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Case Study 1 -->
+                <div class="border border-stone-700 p-8 rounded-2xl bg-stone-800">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="ph ph-rocket-launch text-3xl text-red-500"></i>
+                        <h3 class="text-2xl font-bold">NASA Apollo (1960s)</h3>
+                    </div>
+                    <p class="text-stone-400 text-sm mb-4 leading-relaxed">
+                        The microchip industry wasn't built by consumer demand. It was built because the US Air Force needed guidance computers for Minuteman II missiles that were light enough to fly.
+                    </p>
+                    <div class="bg-stone-900 p-4 rounded-lg border border-stone-700">
+                        <p class="text-xs font-bold text-white uppercase mb-1">The Lesson</p>
+                        <p class="text-xs text-stone-400">Deeptech starts by solving a National Security or Infrastructure problem, not by selling gadgets to consumers.</p>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="border border-stone-700 p-8 rounded-2xl bg-stone-800">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="ph ph-circuitry text-3xl text-red-500"></i>
+                        <h3 class="text-2xl font-bold">Silicon Valley (Fairchild)</h3>
+                    </div>
+                    <p class="text-stone-400 text-sm mb-4 leading-relaxed">
+                        Fairchild Semiconductor's first major customers weren't radio makers. They were defense contractors. The "Venture Capital" model emerged to de-risk these technologies for the state.
+                    </p>
+                    <div class="bg-stone-900 p-4 rounded-lg border border-stone-700">
+                        <p class="text-xs font-bold text-white uppercase mb-1">The Lesson</p>
+                        <p class="text-xs text-stone-400">Align your startup with a "Sovereign Mandate" (Food, Energy, Defense) to unlock the biggest, earliest checks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Framework - The Moat Radar -->
+    <section class="slide">
+        <div class="slide-number">03 / Framework</div>
+        <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-4xl text-stone-900 mb-6">The Moat Radar</h2>
+            <p class="text-xl text-stone-500 mb-12 max-w-2xl">
+                Investors ask "What's your moat?". "We have a patent" is the wrong answer. You need a structural defense.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="content-box mt-0">
+                    <div class="text-4xl text-stone-200 mb-4 font-serif">A</div>
+                    <h4 class="text-lg font-bold text-stone-900 mb-2">Technical Moat</h4>
+                    <p class="text-sm text-stone-600">Hard to replicate physics or engineering. Requires years of R&D.</p>
+                    <p class="text-xs text-red-600 mt-2 font-bold">Example: Proprietary Enzyme Synthesis</p>
+                </div>
+                <div class="content-box mt-0">
+                    <div class="text-4xl text-stone-200 mb-4 font-serif">B</div>
+                    <h4 class="text-lg font-bold text-stone-900 mb-2">Regulatory Moat</h4>
+                    <p class="text-sm text-stone-600">Compliance is so hard, nobody else wants to do it.</p>
+                    <p class="text-xs text-red-600 mt-2 font-bold">Example: FDA Class III Approval</p>
+                </div>
+                <div class="content-box mt-0">
+                    <div class="text-4xl text-stone-200 mb-4 font-serif">C</div>
+                    <h4 class="text-lg font-bold text-stone-900 mb-2">Economic Moat</h4>
+                    <p class="text-sm text-stone-600">Unit economics that only work at your scale or efficiency.</p>
+                    <p class="text-xs text-red-600 mt-2 font-bold">Example: Cost per kg to Orbit</p>
+                </div>
+            </div>
+
+            <!-- Aphelia Example -->
+            <div class="mt-12 bg-stone-100 p-6 rounded-xl border border-stone-200 flex gap-6 items-start">
+                <div class="shrink-0 bg-stone-900 text-white p-3 rounded-lg font-bold text-xs uppercase tracking-wider">Case Study</div>
+                <div>
+                    <h4 class="font-bold text-stone-900 mb-1">Aphelia Space</h4>
+                    <p class="text-sm text-stone-600">
+                        <strong>Tech:</strong> Wireless Power. 
+                        <strong>Regulatory Moat:</strong> Operating in lunar shadowed regions requires compliance standards that Aphelia helped write. This locks out competitors who don't know the "Law of the Moon".
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: The Positioning Canvas -->
+    <section class="slide">
+        <div class="slide-number">04 / Active Exercise</div>
+        <div class="max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-4xl text-stone-900 mb-6">The Deeptech Positioning Canvas</h2>
+            <p class="text-stone-500 mb-12">Adapted from MIT Sloan. Where does your venture sit?</p>
+
+            <div class="bg-white p-8 rounded-2xl shadow-xl border border-stone-200 relative">
+                <!-- Visual Representation of 4 Quadrants -->
+                <div class="grid grid-cols-2 gap-px bg-stone-200 border border-stone-200 rounded-lg overflow-hidden h-96">
+                    <div class="bg-white p-6 flex flex-col justify-center items-center hover:bg-red-50 transition-colors">
+                        <i class="ph ph-atom text-3xl text-stone-400 mb-2"></i>
+                        <h4 class="font-bold text-stone-900">Core Tech IP</h4>
+                        <p class="text-xs text-stone-500 mt-2">Is it hard to build?</p>
+                    </div>
+                    <div class="bg-white p-6 flex flex-col justify-center items-center hover:bg-red-50 transition-colors">
+                        <i class="ph ph-gavel text-3xl text-stone-400 mb-2"></i>
+                        <h4 class="font-bold text-stone-900">Regulatory Defense</h4>
+                        <p class="text-xs text-stone-500 mt-2">Is it hard to approve?</p>
+                    </div>
+                    <div class="bg-white p-6 flex flex-col justify-center items-center hover:bg-red-50 transition-colors">
+                        <i class="ph ph-flag-banner text-3xl text-stone-400 mb-2"></i>
+                        <h4 class="font-bold text-stone-900">Sovereign Utility</h4>
+                        <p class="text-xs text-stone-500 mt-2">Does the nation need it?</p>
+                    </div>
+                    <div class="bg-white p-6 flex flex-col justify-center items-center hover:bg-red-50 transition-colors">
+                        <i class="ph ph-chart-line-up text-3xl text-stone-400 mb-2"></i>
+                        <h4 class="font-bold text-stone-900">Unit Economics</h4>
+                        <p class="text-xs text-stone-500 mt-2">Does the math work?</p>
+                    </div>
+                </div>
+                
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-stone-900 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+                    YOUR VENTURE
+                </div>
+            </div>
+
+            <p class="text-xs text-stone-400 mt-6">
+                Source: Adapted for Malaysia from <a href="#" class="underline">MIT Sloan: The Incumbent's Deep Tech Strategy Playbook</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Slide 6: The Funding Bridge -->
+    <section class="slide bg-stone-100">
+        <div class="slide-number">05 / Strategy</div>
+        <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-4xl text-stone-900 mb-6">Engineering for the Check</h2>
+            
+            <div class="flex items-center gap-4 mb-12 p-4 bg-white rounded-lg border-l-4 border-red-600 shadow-sm">
+                <i class="ph ph-warning-circle text-2xl text-red-600"></i>
+                <p class="text-stone-700 text-sm font-medium">
+                    <strong>The Mistake:</strong> Building "features" because you can.<br>
+                    <strong>The Fix:</strong> Building "evidence" that unlocks the next tranche of money.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-serif text-stone-900 mb-4">Mission Objectives (Ends)</h3>
+                    <p class="text-stone-600 text-sm mb-4">The binary milestones an investor needs to see to believe the risk is reduced.</p>
+                    <ul class="space-y-2 text-sm text-stone-700">
+                        <li class="flex items-center gap-2"><i class="ph ph-check-circle text-green-600"></i> "It can fly for 10 minutes."</li>
+                        <li class="flex items-center gap-2"><i class="ph ph-check-circle text-green-600"></i> "It costs less than $100/kg."</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-serif text-stone-900 mb-4">Mission Requirements (Means)</h3>
+                    <p class="text-stone-600 text-sm mb-4">The specific engineering specs needed to hit the objective. Nothing more.</p>
+                    <ul class="space-y-2 text-sm text-stone-700">
+                        <li class="flex items-center gap-2"><i class="ph ph-gear text-stone-400"></i> Battery density: 400 Wh/kg</li>
+                        <li class="flex items-center gap-2"><i class="ph ph-gear text-stone-400"></i> Airframe weight: < 50kg</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: The Mission Matrix -->
+    <section class="slide">
+        <div class="slide-number">06 / Prioritization Tool</div>
+        <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-4xl text-stone-900 mb-4">The Mission Requirements Matrix</h2>
+            <p class="text-stone-500 mb-8">How to cut 50% of your roadmap today.</p>
+
+            <div class="overflow-x-auto shadow-lg rounded-lg border border-stone-200">
+                <table class="matrix-table w-full text-left">
+                    <thead>
+                        <tr>
+                            <th class="w-1/3">Column A: Funding Milestone</th>
+                            <th class="w-1/3 text-red-900 bg-red-100">Column B: Critical Subsystems (Must Build)</th>
+                            <th class="w-1/3 text-stone-500 bg-stone-100">Column C: Distractions (Buy/Simulate)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold text-stone-900">
+                                Series A Milestone:<br>
+                                "Prove Autonomous Navigation"
+                            </td>
+                            <td>
+                                <ul class="list-disc pl-4 text-sm space-y-1 text-red-800">
+                                    <li>Computer Vision Algo (Core IP)</li>
+                                    <li>Sensor Fusion Layer</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-disc pl-4 text-sm space-y-1 text-stone-500 line-through">
+                                    <li>Custom Robot Chassis (Buy Off-shelf)</li>
+                                    <li>Pretty User Dashboard (Simulate)</li>
+                                    <li>Mobile App (Not needed yet)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-8 text-center">
+                <h3 class="text-xl font-bold text-stone-900 mb-2">The "Red Pen" Exercise</h3>
+                <p class="text-sm text-stone-500 max-w-lg mx-auto">
+                    In the sprint, we will force you to move items from Column B to Column C. Every item in B increases your burn rate and dilutes your focus.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: Next Steps -->
+    <section class="slide bg-stone-900 text-white text-center">
+        <div class="max-w-2xl mx-auto">
+            <i class="ph ph-flag-checkered text-6xl text-red-600 mb-6"></i>
+            <h2 class="text-5xl font-serif mb-6">Ready to Build?</h2>
+            <p class="text-lg text-stone-400 mb-10 leading-relaxed">
+                You have the theory. Now apply it to your specific venture in our live warroom session.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="workshop-sprint.html#paymentModal" class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg shadow-red-900/50">
+                    Secure Sprint Seat (RM 99)
+                </a>
+                <a href="index.html" class="border border-stone-600 text-stone-300 hover:text-white hover:border-white px-8 py-4 rounded-lg font-medium transition-colors">
+                    Back to Home
+                </a>
+            </div>
+            
+            <div class="mt-16 pt-8 border-t border-stone-800 flex flex-col gap-4">
+                 <p class="text-xs font-bold text-stone-500 uppercase tracking-widest">Need Deeper Help?</p>
+                 <div class="flex justify-center gap-8 text-sm text-stone-300">
+                     <span class="flex items-center gap-2"><i class="ph ph-check text-red-500"></i> Technical Document Review</span>
+                     <span class="flex items-center gap-2"><i class="ph ph-check text-red-500"></i> 1:1 Strategic Consult</span>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

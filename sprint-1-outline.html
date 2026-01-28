@@ -5,22 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Outline & Lesson Plan (Sprint 01) | Deeptech Initiative</title>
     
-    <!-- SEO & Social Meta Tags -->
-    <meta name="description" content="A 60-minute intensive workshop for deeptech founders & researchers. Learn to map your innovation to grant funding, validate tech moats, and prioritize your MVP. Join the Sprint for RM 99.">
-    <meta name="keywords" content="Deeptech Workshop, Grant Funding, Tech Moat, MVP Prioritization, STEM Commercialization, Deeptech Initiative">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Deeptech Sprint: From Idea to Grant Funding">
-    <meta property="og:description" content="Stop viewing tech and regulation in silos. Validate your techno-economic feasibility and build a fundable MVP roadmap in 60 minutes.">
-    <meta property="og:image" content="https://ik.imagekit.io/cbctech/Deeptech.png">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Deeptech Sprint: From Idea to Grant Funding">
-    <meta name="twitter:description" content="A 60-minute intensive to help founders and researchers cross the 'Valley of Death'. Build your grant-ready strategy now.">
-    <meta name="twitter:image" content="https://ik.imagekit.io/cbctech/Deeptech.png">
-
     <!-- Favicon -->
     <link rel="icon" href="https://ik.imagekit.io/cbctech/Pink%20Minimal%20Beauty%20Organic%20Cosmetics%20Circle%20Logo%20(1).png" type="image/png">
     
@@ -59,22 +43,59 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
-        .spec-grid {
-            display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 12px;
-            font-size: 0.9rem;
-            border-bottom: 1px solid #E7E5E4;
-            padding-bottom: 12px;
-            margin-bottom: 12px;
+        .timeline-marker {
+            position: absolute;
+            left: -39px;
+            top: 24px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-red);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--accent-red);
         }
-        .spec-label {
-            font-weight: 600;
-            color: #78716C;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.05em;
-            padding-top: 2px;
+
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E7E5E4;
+            z-index: 0;
+        }
+        
+        .canvas-preview {
+            background-color: #FAFAFA;
+            border: 1px border-stone-200;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 12px;
+        }
+        
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin-top: 8px;
+        }
+        .matrix-table th {
+            background-color: #FEE2E2;
+            color: #991B1B;
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #FECACA;
+        }
+        .matrix-table td {
+            background-color: white;
+            padding: 8px;
+            border: 1px solid #E5E7EB;
+            vertical-align: top;
+        }
+        .matrix-table td ul {
+            padding-left: 12px;
+            margin: 0;
+            list-style-type: disc;
         }
     </style>
 </head>
@@ -93,214 +114,205 @@
     <!-- Header -->
     <header class="pt-32 pb-12 px-6 max-w-4xl mx-auto">
         <div class="mb-4 text-xs font-bold text-red-600 uppercase tracking-widest">Deeptech Founder’s Blueprint</div>
-        <h1 class="text-4xl md:text-6xl text-stone-900 mb-6 leading-tight">Course Outline & Lesson Plan</h1>
+        <h1 class="text-4xl md:text-6xl text-stone-900 mb-6 leading-tight">Sprint Course Outline</h1>
         <p class="text-lg text-stone-600 max-w-2xl leading-relaxed">
-            A high-impact, 60-minute intensive designed to move STEM researchers and founders from "Lab-Bench Theory" to "Investable Narrative."
+            A 60-minute intensive using <strong>Adult Participatory Learning</strong> to diagnose your venture's investability gap. This is not a lecture; it is a strategic intervention using proprietary visual frameworks.
         </p>
     </header>
 
-    <!-- Training Specifications (New Section) -->
+    <!-- Training Specifications -->
     <section class="px-6 mb-16">
         <div class="max-w-4xl mx-auto bg-white rounded-2xl border border-stone-200 p-8 shadow-sm">
-            <h2 class="text-2xl text-stone-900 mb-6">Training Specifications</h2>
-            
-            <div class="grid md:grid-cols-2 gap-x-12 gap-y-0">
-                <!-- Left Col -->
+            <div class="grid md:grid-cols-2 gap-8 text-sm">
                 <div>
-                    <div class="spec-grid">
-                        <div class="spec-label">Trainer Name</div>
-                        <div>Razlan Dhamir Hamdan & Shafira Noh</div>
-                    </div>
-                    <div class="spec-grid">
-                        <div class="spec-label">Topic</div>
-                        <div>Deeptech Strategy: From Moonshot to Market</div>
-                    </div>
-                    <div class="spec-grid">
-                        <div class="spec-label">Date & Time</div>
-                        <div>Jan 31, 2026 | 09:00 - 10:00 (1 Hour)</div>
-                    </div>
-                    <div class="spec-grid">
-                        <div class="spec-label">Location</div>
-                        <div>Online</div>
-                    </div>
-                </div>
-                <!-- Right Col -->
-                <div>
-                    <div class="spec-grid">
-                        <div class="spec-label">Target Audience</div>
-                        <div>STEM Researchers, Pre-Seed Founders, Policy Strategists</div>
-                    </div>
-                    <div class="spec-grid">
-                        <div class="spec-label">Methodology</div>
-                        <div>Participatory Learning, Case Analysis, Red Teaming</div>
-                    </div>
-                    <div class="spec-grid">
-                        <div class="spec-label">Assessment</div>
-                        <div>Live Canvas Mapping, Peer Review</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objectives & Outcomes -->
-            <div class="mt-8 grid md:grid-cols-2 gap-8 pt-8 border-t border-stone-100">
-                <div>
-                    <h4 class="text-sm font-bold text-red-700 uppercase mb-3 flex items-center gap-2">
-                        <i class="ph ph-target"></i> Learning Objectives
-                    </h4>
-                    <p class="text-xs text-stone-400 mb-3 italic">By the end of this module, participants will:</p>
-                    <ul class="text-sm text-stone-600 space-y-2 list-disc pl-4">
-                        <li>Deconstruct the economic and regulatory barriers specific to ASEAN deeptech ventures (The "Valley of Death").</li>
-                        <li>Explore First Principles Thinking to validate technical moats beyond just IP.</li>
-                        <li>Examine the Mission Requirements Matrix for prioritizing MVP subsystems.</li>
-                    </ul>
+                    <p class="text-stone-400 font-bold uppercase text-xs mb-1">Trainer</p>
+                    <p class="font-medium text-stone-900">Razlan Dhamir Hamdan (Deeptech Operator)</p>
                 </div>
                 <div>
-                    <h4 class="text-sm font-bold text-red-700 uppercase mb-3 flex items-center gap-2">
-                        <i class="ph ph-check-circle"></i> Learning Outcomes
-                    </h4>
-                    <p class="text-xs text-stone-400 mb-3 italic">By the end of the session, learners will be able to:</p>
-                    <ul class="text-sm text-stone-600 space-y-2 list-disc pl-4">
-                        <li><strong>Articulate</strong> a "Bifocal Strategy" that aligns a Moonshot vision with immediate, grant-fundable milestones.</li>
-                        <li><strong>Construct</strong> a defensible Tech Moat strategy that integrates regulatory complexity.</li>
-                        <li><strong>Draft</strong> a prioritized MVP roadmap that filters "nice-to-have" engineering from "funding-critical" milestones.</li>
-                    </ul>
+                    <p class="text-stone-400 font-bold uppercase text-xs mb-1">Methodology</p>
+                    <p class="font-medium text-stone-900">Advanced Bloom’s Taxonomy (Analyze, Evaluate, Create)</p>
+                </div>
+                <div>
+                    <p class="text-stone-400 font-bold uppercase text-xs mb-1">Target Audience</p>
+                    <p class="font-medium text-stone-900">STEM Researchers, Pre-Seed Founders, Grant Seekers</p>
+                </div>
+                <div>
+                    <p class="text-stone-400 font-bold uppercase text-xs mb-1">Critical Output</p>
+                    <p class="font-medium text-stone-900">A "Green-Light" Roadmap for Funding & MVP Development</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Part 1: Course Modules -->
+    <!-- Part 1: Strategic Positioning (30 Mins) -->
+    <section class="px-6 mb-12">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="text-4xl font-serif text-stone-200">01</span>
+                <div>
+                    <h2 class="text-2xl text-stone-900 font-bold">Strategic Positioning of Technology</h2>
+                    <p class="text-sm text-red-600 font-medium">Outcome: Strong Positioning & Compelling Narrative</p>
+                </div>
+            </div>
+
+            <div class="space-y-6 pl-4 border-l-2 border-stone-100 relative">
+                
+                <!-- 00-08 -->
+                <div class="relative pl-8">
+                    <div class="timeline-marker" style="left: -7px; top: 0;"></div>
+                    <h3 class="text-lg font-bold text-stone-900">The Context: Science vs. Venture (8 Mins)</h3>
+                    <p class="text-sm text-stone-600 mb-2"><strong>Theory:</strong> Deeptech has historically been "State-Sponsored" before "Venture-Backed". We analyze the funding origins of mega-projects to understand the narrative required.</p>
+                    <div class="bg-stone-50 p-3 rounded text-sm text-stone-700 border border-stone-100">
+                        <i class="ph ph-book-open text-red-500"></i> <strong>Historical Case Studies:</strong>
+                        <ul class="list-disc pl-4 mt-2 space-y-1 text-xs">
+                            <li><strong>NASA Apollo (1960s):</strong> Funded for geopolitical dominance, not science. Source: <a href="https://marianamazzucato.com/books/mission-economy" target="_blank" class="underline hover:text-red-600">Mission Economy</a>.</li>
+                            <li><strong>Silicon Valley (Fairchild):</strong> Early chips funded by Minuteman missile contracts. Source: <a href="https://steveblank.com/secret-history/" target="_blank" class="underline hover:text-red-600">Steve Blank</a>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 08-18 -->
+                <div class="relative pl-8">
+                    <div class="timeline-marker" style="left: -7px; top: 0;"></div>
+                    <h3 class="text-lg font-bold text-stone-900">Framework: The Moat Radar (10 Mins)</h3>
+                    <p class="text-sm text-stone-600 mb-2"><strong>Deep Dive:</strong> Analysis of Technical Moats vs. Regulatory Moats. How to position your "Research Gap" as a "Market Gap".</p>
+                    <ul class="list-disc pl-4 text-sm text-stone-600">
+                        <li><strong>Case Study:</strong> How Aphelia used lunar regulations to create a monopoly before building the product.</li>
+                    </ul>
+                </div>
+
+                <!-- 18-25 -->
+                <div class="relative pl-8">
+                    <div class="timeline-marker" style="left: -7px; top: 0;"></div>
+                    <h3 class="text-lg font-bold text-stone-900">Active Exercise: Deeptech Positioning (7 Mins)</h3>
+                    <p class="text-sm text-stone-600 mb-2"><strong>Application:</strong> Participants map their venture on the canvas live.</p>
+                    
+                    <div class="canvas-preview">
+                        <img src="https://ik.imagekit.io/cbctech/Screenshot%202026-01-28%20at%202.20.16%E2%80%AFPM.png" alt="Deeptech Positioning Canvas" class="w-full rounded-lg border border-stone-200 shadow-sm">
+                        <div class="text-[10px] text-stone-400 mt-2 text-center">
+                            Canvas adapted for Malaysia from <a href="https://sloanreview.mit.edu/article/the-incumbents-deep-tech-strategy-playbook/" target="_blank" class="underline hover:text-red-600">MIT Sloan: The Incumbent's Deep Tech Strategy Playbook</a>.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 25-30 -->
+                <div class="relative pl-8">
+                    <div class="timeline-marker" style="left: -7px; top: 0; background-color: #1C1917;"></div>
+                    <h3 class="text-lg font-bold text-stone-900">Peer Review & Synthesis (5 Mins)</h3>
+                    <div class="bg-blue-50 p-3 rounded text-sm text-blue-900 border border-blue-100">
+                        <strong>Gap Awareness:</strong> "Did you struggle to fill the 'Regulatory Defense' quadrant? This is the most common reason for grant rejection. We address this specifically in our 1:1 Technical Review."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 2: MVP Strategy (30 Mins) -->
     <section class="px-6 mb-20">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl text-stone-900 mb-8 border-b border-stone-200 pb-4">Detailed Module Breakdown</h2>
-            
-            <div class="space-y-6">
-                <!-- Module 1 -->
-                <div class="outline-card p-6 md:p-8 rounded-r-xl">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="md:w-32 flex-shrink-0">
-                            <span class="block text-3xl font-serif text-red-600">01</span>
-                            <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">10 Mins</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-stone-900 mb-2">The Context: Escaping the Lab</h3>
-                            <p class="text-stone-600 mb-4 text-sm leading-relaxed">
-                                <strong>Pain Point Addressed:</strong> The "Grant Rejection Cycle". Why technical novelty alone fails to secure commercial funding in ASEAN.
-                            </p>
-                            <div class="bg-stone-50 p-4 rounded-lg border border-stone-100">
-                                <h4 class="text-xs font-bold text-stone-900 uppercase mb-2">Approach</h4>
-                                <ul class="text-sm text-stone-600 space-y-1 pl-0">
-                                    <li class="flex gap-2"><i class="ph ph-lightning text-red-500 mt-1"></i> <strong>Shock Therapy:</strong> Contrasting a "Science Project" vs. a "Venture Asset".</li>
-                                    <li class="flex gap-2"><i class="ph ph-lightning text-red-500 mt-1"></i> <strong>The Bifocal Framework:</strong> How to sell the Moonshot (Vision) while building the Ladder (Product).</li>
-                                </ul>
-                            </div>
-                        </div>
+            <div class="flex items-center gap-4 mb-6">
+                <span class="text-4xl font-serif text-stone-200">02</span>
+                <div>
+                    <h2 class="text-2xl text-stone-900 font-bold">MVP Development Strategy for Funding</h2>
+                    <p class="text-sm text-red-600 font-medium">Outcome: A Tech Development Plan that Wins Commercial Objectives</p>
+                </div>
+            </div>
+
+            <div class="space-y-6 pl-4 border-l-2 border-stone-100 relative">
+                
+                <!-- 30-38 -->
+                <div class="relative pl-8">
+                    <div class="timeline-marker" style="left: -7px; top: 0;"></div>
+                    <h3 class="text-lg font-bold text-stone-900">Framework: The Funding Bridge (8 Mins)</h3>
+                    <p class="text-sm text-stone-600 mb-2"><strong>Theory:</strong> Mapping engineering milestones directly to funding tranches. Don't build what you can't fund.</p>
+                    <ul class="list-disc pl-4 text-sm text-stone-600">
+                        <li><strong>Concept:</strong> Mission Objectives (Ends) vs. Mission Requirements (Means).</li>
+                        <li><strong>First Principles Economics:</strong> Proving unit economics on paper before prototyping.</li>
+                    </ul>
+                </div>
+
+                <!-- 38-52 -->
+                <div class="relative pl-8">
+                    <div class="timeline-marker" style="left: -7px; top: 0;"></div>
+                    <h3 class="text-lg font-bold text-stone-900">Active Exercise: Mission Requirements Matrix (14 Mins)</h3>
+                    <p class="text-sm text-stone-600 mb-2"><strong>Application:</strong> We use the "Red Pen" method on your feature list to ruthlessly categorize engineering tasks.</p>
+                    
+                    <div class="canvas-preview">
+                        <strong>Visual Tool: The Prioritization Matrix</strong>
+                        <table class="matrix-table">
+                            <thead>
+                                <tr>
+                                    <th>Column A: Funding Milestone</th>
+                                    <th>Column B: Critical Subsystems (Build)</th>
+                                    <th>Column C: Distractions (Buy/Simulate)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>Example: Series A</strong><br>
+                                        "Prove flight capability"
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>Propulsion Core</li>
+                                            <li>Guidance Software</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>Custom Chassis (Buy off-shelf)</li>
+                                            <li>User Dashboard (Simulate)</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-stone-50 p-3 rounded text-sm text-stone-700 mt-3">
+                        <i class="ph ph-wrench text-red-500"></i> <strong>Tactical Output:</strong> A pruned, lean MVP roadmap that fits a RM 500k grant budget.
                     </div>
                 </div>
 
-                <!-- Module 2 -->
-                <div class="outline-card p-6 md:p-8 rounded-r-xl">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="md:w-32 flex-shrink-0">
-                            <span class="block text-3xl font-serif text-red-600">02</span>
-                            <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">25 Mins</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-stone-900 mb-2">Designing for Complexity (Moats)</h3>
-                            <p class="text-stone-600 mb-4 text-sm leading-relaxed">
-                                <strong>Pain Point Addressed:</strong> "Google will just copy us." Fear of zero defensibility once the product launches.
-                            </p>
-                            <div class="bg-stone-50 p-4 rounded-lg border border-stone-100">
-                                <h4 class="text-xs font-bold text-stone-900 uppercase mb-2">Approach</h4>
-                                <ul class="text-sm text-stone-600 space-y-1 pl-0">
-                                    <li class="flex gap-2"><i class="ph ph-lightning text-red-500 mt-1"></i> <strong>Systems Thinking:</strong> Mapping Tech, Regulation, and Economics as a single system.</li>
-                                    <li class="flex gap-2"><i class="ph ph-lightning text-red-500 mt-1"></i> <strong>Case Study Deconstruction:</strong> Anatomy of a failed unicorn (Theranos) vs. a success (SpaceX).</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Module 3 -->
-                <div class="outline-card p-6 md:p-8 rounded-r-xl border-l-red-800">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="md:w-32 flex-shrink-0">
-                            <span class="block text-3xl font-serif text-red-800">03</span>
-                            <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">25 Mins</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-stone-900 mb-2">Strategic Engineering (The MVP)</h3>
-                            <p class="text-stone-600 mb-4 text-sm leading-relaxed">
-                                <strong>Pain Point Addressed:</strong> Running out of money before proving viability. Building "cool features" that investors don't care about.
-                            </p>
-                            <div class="bg-stone-50 p-4 rounded-lg border border-stone-100">
-                                <h4 class="text-xs font-bold text-stone-900 uppercase mb-2">Approach</h4>
-                                <ul class="text-sm text-stone-600 space-y-1 pl-0">
-                                    <li class="flex gap-2"><i class="ph ph-lightning text-red-800 mt-1"></i> <strong>Mission Matrix:</strong> Differentiating Mission Objectives (Ends) from Requirements (Means).</li>
-                                    <li class="flex gap-2"><i class="ph ph-lightning text-red-800 mt-1"></i> <strong>Live Mapping:</strong> Participants apply the "Build vs. Buy vs. Simulate" filter to their own tech stack.</li>
-                                </ul>
-                            </div>
-                        </div>
+                <!-- 52-60 -->
+                <div class="relative pl-8">
+                    <div class="timeline-marker" style="left: -7px; top: 0; background-color: #1C1917;"></div>
+                    <h3 class="text-lg font-bold text-stone-900">Review & Synthesis (8 Mins)</h3>
+                    <p class="text-sm text-stone-600 mb-2"><strong>Closing:</strong> How to translate Columns A & B into the "Gantt Chart" required by MOSTI/Cradle applications.</p>
+                    <div class="bg-amber-50 p-3 rounded text-sm text-amber-900 border border-amber-100">
+                        <strong>The Upsell Trigger:</strong> "You have the strategy. If you need someone to write the complex technical feasibility papers to prove 'Column B' works, book our Technical Document Consult."
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Part 2: Facilitation Plan -->
+    <!-- Learning Outcomes Summary -->
     <section class="px-6 mb-24">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl text-stone-900 mb-8 border-b border-stone-200 pb-4">Facilitation & Engagement Plan</h2>
-
-            <div class="relative pl-12 space-y-12">
-                <div class="timeline-line" style="left: 24px; position: absolute; top: 0; bottom: 0; width: 2px; background-color: #E7E5E4;"></div>
-
-                <!-- PRE-WORKSHOP -->
-                <div class="relative">
-                    <div class="absolute -left-12 top-1 w-8 h-8 bg-stone-200 rounded-full flex items-center justify-center text-xs font-bold text-stone-600">
-                        <i class="ph ph-calendar-check"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-2">Pre-Event (Context Setting)</h3>
-                    <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm">
-                        <p class="text-sm text-stone-600 mb-2"><strong>Goal:</strong> Prime the cognitive load so the 60 minutes are pure application.</p>
-                        <ul class="text-sm text-stone-600 space-y-2 list-disc pl-4">
-                            <li><strong>Distribution:</strong> "The Deeptech Primer" PDF (Read time: 5 mins).</li>
-                            <li><strong>Input:</strong> Participants submit their "One Big Blocker" via form.</li>
-                        </ul>
-                    </div>
+        <div class="max-w-4xl mx-auto bg-stone-900 text-white rounded-2xl p-8">
+            <h3 class="text-2xl font-serif mb-6">By the End of 60 Minutes:</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-bold text-red-400 mb-2">You Will Have Analyzed:</h4>
+                    <ul class="list-disc pl-4 text-sm text-stone-300 space-y-2">
+                        <li>Why your current narrative fails the "Investor/Grant" test.</li>
+                        <li>The gap between your scientific innovation and commercial reality.</li>
+                    </ul>
                 </div>
-
-                <!-- DURING WORKSHOP -->
-                <div class="relative">
-                    <div class="absolute -left-12 top-1 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-xs font-bold text-white">
-                        <i class="ph ph-lightning"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-2">During Event (The Sprint)</h3>
-                    <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm">
-                        <p class="text-sm text-stone-600 mb-2"><strong>Goal:</strong> High-velocity learning with zero fluff.</p>
-                        <ul class="text-sm text-stone-600 space-y-2 list-disc pl-4">
-                            <li><strong>00-10m:</strong> Framing & "Shock Therapy" (Socratic questioning on current failures).</li>
-                            <li><strong>10-35m:</strong> Systems Thinking (Live case study dissection).</li>
-                            <li><strong>35-60m:</strong> Strategic Engineering (Interactive mapping of their own MVP).</li>
-                        </ul>
-                    </div>
+                <div>
+                    <h4 class="font-bold text-green-400 mb-2">You Will Have Created:</h4>
+                    <ul class="list-disc pl-4 text-sm text-stone-300 space-y-2">
+                        <li>A 1-Page "Sovereign Positioning Statement" (using the Canvas).</li>
+                        <li>A prioritized "Kill List" of features to cut from your MVP (using the Matrix).</li>
+                        <li>A validated "Tech Moat" strategy.</li>
+                    </ul>
                 </div>
-
-                <!-- POST WORKSHOP -->
-                <div class="relative">
-                    <div class="absolute -left-12 top-1 w-8 h-8 bg-stone-200 rounded-full flex items-center justify-center text-xs font-bold text-stone-600">
-                        <i class="ph ph-check-circle"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-2">Post-Event (Application)</h3>
-                    <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm">
-                        <p class="text-sm text-stone-600 mb-2"><strong>Goal:</strong> Conversion to actionable roadmap.</p>
-                        <ul class="text-sm text-stone-600 space-y-2 list-disc pl-4">
-                            <li><strong>Artifacts:</strong> Digital Deeptech Canvas template & Session Recording.</li>
-                            <li><strong>Office Hours:</strong> Exclusive link for 1:1 Strategic Consultation (Paid) for deep-dive.</li>
-                        </ul>
-                    </div>
-                </div>
-
+            </div>
+            <div class="mt-8 pt-8 border-t border-stone-700 text-center">
+                <a href="workshop-sprint.html#paymentModal" class="inline-block bg-white text-stone-900 px-8 py-3 rounded-full font-bold hover:bg-stone-100 transition-colors">
+                    Join the Sprint - RM 99
+                </a>
             </div>
         </div>
     </section>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 01: Deeptech Strategy & MVP | Aphelia</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://ik.imagekit.io/cbctech/Pink%20Minimal%20Beauty%20Organic%20Cosmetics%20Circle%20Logo%20(1).png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-cream: #FFFDF7;
+            --text-primary: #1C1917;
+            --accent-red: #D93025;
+            --border-color: #E7E5E4;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            /* Scroll Snapping for Slide Effect */
+            scroll-snap-type: y mandatory;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        /* Slide Container */
+        .slide {
+            height: 100vh;
+            width: 100vw;
+            scroll-snap-align: start;
+            padding: 4rem 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Slide Footer/Progress */
+        .slide-footer {
+            position: absolute;
+            bottom: 2rem;
+            left: 6rem;
+            right: 6rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #A8A29E;
+            border-top: 1px solid #E7E5E4;
+            padding-top: 1rem;
+        }
+
+        /* Custom Card Styles */
+        .card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-box {
+            background-color: #FEF2F2; /* Red 50 */
+            border-left: 4px solid var(--accent-red);
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Canvas Grid System for Slide 11 */
+        .moonshot-canvas {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Left, Middle, Right */
+            gap: 1rem;
+            height: 70vh;
+            width: 100%;
+            border: 2px solid #1C1917;
+            background: white;
+            font-size: 0.8rem;
+        }
+
+        .canvas-col {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .canvas-col-border-r { border-right: 1px dashed #A8A29E; }
+        .canvas-col-border-l { border-left: 1px dashed #A8A29E; }
+
+        .canvas-section {
+            border: 1px solid #E7E5E4;
+            padding: 0.75rem;
+            border-radius: 0.25rem;
+            position: relative;
+        }
+        
+        .canvas-label {
+            position: absolute;
+            top: -0.6rem;
+            left: 0.5rem;
+            background: white;
+            padding: 0 0.25rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent-red);
+            text-transform: uppercase;
+        }
+
+        /* Print/Hide */
+        @media print {
+            .no-print { display: none; }
+        }
+        
+        /* Mission Table */
+        .mission-table th {
+            background-color: #1C1917;
+            color: white;
+            font-weight: 400;
+            text-align: left;
+            padding: 0.5rem;
+        }
+        .mission-table td {
+            border: 1px solid #E7E5E4;
+            padding: 0.5rem;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title -->
+    <section class="slide text-center bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-6 inline-block px-4 py-1 border border-red-200 bg-red-50 text-red-700 text-xs font-bold tracking-widest uppercase rounded-full">
+                Deeptech Founder's Blueprint
+            </div>
+            <h1 class="text-7xl md:text-8xl text-stone-900 mb-8 leading-tight">
+                Sprint <span class="text-red-600">01</span>
+            </h1>
+            <h2 class="text-3xl md:text-4xl text-stone-600 font-serif">
+                Strategic Positioning & MVP Strategy
+            </h2>
+            <div class="mt-12 flex justify-center gap-8 text-stone-500">
+                <div class="flex items-center gap-2">
+                    <i class="ph ph-clock text-xl"></i> 60 Minutes
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="ph ph-presentation-chart text-xl"></i> Workshop
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Deeptech Initiative</span>
+            <span>Slide 1 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 2: Bio -->
+    <section class="slide">
+        <div class="grid grid-cols-12 gap-12 items-center h-full">
+            <div class="col-span-4 h-full relative">
+                <!-- Placeholder for Image -->
+                <div class="w-full h-[80%] bg-stone-200 rounded-2xl overflow-hidden mt-12 relative">
+                    <img src="https://ik.imagekit.io/cbctech/razlan.jpg" onerror="this.src='https://placehold.co/400x600?text=Razlan+Dhamir'" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                </div>
+            </div>
+            <div class="col-span-8">
+                <h3 class="text-red-600 text-lg font-bold uppercase tracking-widest mb-2">Your Facilitator</h3>
+                <h2 class="text-5xl mb-6">Razlan Dhamir Hamdan</h2>
+                <p class="text-xl text-stone-600 mb-8 font-serif italic">"Building the bridge between Scientific Theory and Venture Reality."</p>
+                
+                <div class="grid grid-cols-2 gap-6 text-sm">
+                    <div class="card bg-stone-50 border-none">
+                        <strong class="block text-stone-900 mb-1 text-base">Founder, CEO & CTO @ Aphelia</strong>
+                        <p class="text-stone-500">Developing wireless power tech for Moon missions (Moonshot) & Defense/Renewable Energy (Near-term).</p>
+                    </div>
+                    <div class="card bg-stone-50 border-none">
+                        <strong class="block text-stone-900 mb-1 text-base">Key Milestones</strong>
+                        <p class="text-stone-500">1st Asian company in ESRIC (Luxembourg). Payload Pioneers 2024 Recipient.</p>
+                    </div>
+                    <div class="card bg-stone-50 border-none">
+                        <strong class="block text-stone-900 mb-1 text-base">Industry Leadership</strong>
+                        <p class="text-stone-500">Founding Committee of Malaysian Space Industry Consortium (MASIC).</p>
+                    </div>
+                    <div class="card bg-stone-50 border-none">
+                        <strong class="block text-stone-900 mb-1 text-base">Background</strong>
+                        <p class="text-stone-500">E&E Engineering Researcher turned Deeptech Founder.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Facilitator Profile</span>
+            <span>Slide 2 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 3: Overview -->
+    <section class="slide">
+        <h2 class="text-5xl mb-12">Today's Flight Plan</h2>
+        <div class="grid grid-cols-2 gap-12 h-full">
+            <div class="space-y-8">
+                <div class="flex gap-6 items-start opacity-100">
+                    <div class="w-12 h-12 rounded-full bg-stone-900 text-white flex items-center justify-center text-xl font-bold shrink-0">1</div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Strategic Positioning of Technology</h3>
+                        <p class="text-stone-600">Aligning Scientific Vision with Commercial Narrative.</p>
+                        <ul class="mt-2 text-sm text-red-600 font-medium">
+                            <li>• Al-Attas Visioning</li>
+                            <li>• MIT Sloan Playbook</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="w-0.5 h-16 bg-stone-200 ml-6"></div>
+
+                <div class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-stone-900 text-white flex items-center justify-center text-xl font-bold shrink-0">2</div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">MVP Development Strategy</h3>
+                        <p class="text-stone-600">The "Funding Bridge" & Mission Requirements.</p>
+                        <ul class="mt-2 text-sm text-red-600 font-medium">
+                            <li>• Moonshot to Near-Term Canvas</li>
+                            <li>• Mission Objectives vs. Requirements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-stone-100 p-8 rounded-2xl flex flex-col justify-center items-center text-center">
+                <i class="ph ph-users-three text-6xl text-stone-400 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">How We Work</h3>
+                <p class="text-stone-600 mb-6 max-w-xs">We will co-create on a live Google Doc Worksheet. I will provide real-time feedback (Red Pen method).</p>
+                <div class="text-xs font-mono bg-white px-4 py-2 rounded border border-stone-200">Format: Explain → Case Study → Work → Feedback</div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Session Overview</span>
+            <span>Slide 3 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 4: Part 1 Intro - The Problem -->
+    <section class="slide">
+        <div class="flex items-center gap-4 mb-8">
+            <span class="text-6xl font-serif text-stone-200">01</span>
+            <h2 class="text-5xl text-stone-900">Strategic Positioning</h2>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-3xl font-bold mb-6 text-red-600">Why Strategy First?</h3>
+                <p class="text-xl leading-relaxed mb-6">
+                    Deeptech is expensive. Building the wrong research direction leads to the loss of years and millions. 
+                </p>
+                <p class="text-lg text-stone-600 mb-6">
+                    Often, this first step reveals your <strong class="text-stone-900">"Kryptonite"</strong> and forces a necessary PIVOT before you spend a single Ringgit on hardware.
+                </p>
+            </div>
+            <div class="space-y-6">
+                <div class="card border-l-4 border-red-500">
+                    <h4 class="font-bold flex items-center gap-2 text-red-700">
+                        <i class="ph ph-warning-circle"></i> Cautionary Tale
+                    </h4>
+                    <p class="text-sm mt-2 text-stone-600">
+                        A biotech startup developed a sustainable animal feed. Scientifically sound, but they failed to position against existing supply chain logistics. Currently filing for bankruptcy. 
+                        <br><strong>Lesson: Problem Fit > Science Fit.</strong>
+                    </p>
+                </div>
+                <div class="card border-l-4 border-green-500">
+                    <h4 class="font-bold flex items-center gap-2 text-green-700">
+                        <i class="ph ph-chat-circle-text"></i> The Power of Narrative
+                    </h4>
+                    <p class="text-sm mt-2 text-stone-600">
+                        Silicon Valley & YCombinator emphasize <strong>Storytelling</strong>. For radical ideas, you aren't just selling a product; you are selling a future state of the world.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>The Kryptonite Check</span>
+            <span>Slide 4 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 5: Al-Attas Visioning -->
+    <section class="slide">
+        <h2 class="text-4xl text-center mb-4">Prof. Syed Naquib Al-Attas' Strategic Visioning</h2>
+        <p class="text-center text-stone-500 mb-12">The philosophical foundation of our venture building.</p>
+
+        <div class="grid grid-cols-4 gap-4 h-96">
+            <!-- 1 -->
+            <div class="bg-white border border-stone-200 p-6 flex flex-col items-center text-center rounded-xl hover:shadow-lg transition">
+                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-3xl mb-4">
+                    <i class="ph ph-eye"></i>
+                </div>
+                <h4 class="font-bold mb-2">Vision for Future</h4>
+                <p class="text-xs text-stone-500">Connecting Past & Future. <br><strong>Tadbir:</strong> Foresight & Prudence.</p>
+            </div>
+
+            <!-- 2 -->
+            <div class="bg-white border border-stone-200 p-6 flex flex-col items-center text-center rounded-xl hover:shadow-lg transition">
+                <div class="w-16 h-16 bg-amber-50 text-amber-600 rounded-full flex items-center justify-center text-3xl mb-4">
+                    <i class="ph ph-megaphone"></i>
+                </div>
+                <h4 class="font-bold mb-2">Compelling Articulation</h4>
+                <p class="text-xs text-stone-500">Inspiring commitment based on Knowledge, Sincerity, and Ethics.</p>
+            </div>
+
+            <!-- 3 -->
+            <div class="bg-white border border-stone-200 p-6 flex flex-col items-center text-center rounded-xl hover:shadow-lg transition border-red-500 shadow-md transform scale-105">
+                <div class="w-16 h-16 bg-red-50 text-red-600 rounded-full flex items-center justify-center text-3xl mb-4">
+                    <i class="ph ph-strategy"></i>
+                </div>
+                <h4 class="font-bold mb-2 text-red-600">Strategic Positioning</h4>
+                <p class="text-xs text-stone-500">Formulating strategies to achieve the long-term vision.</p>
+                <span class="mt-4 text-[10px] font-bold uppercase tracking-widest text-red-400">Focus of Today</span>
+            </div>
+
+            <!-- 4 -->
+            <div class="bg-stone-100 border border-stone-200 p-6 flex flex-col items-center text-center rounded-xl opacity-50">
+                <div class="w-16 h-16 bg-stone-200 text-stone-400 rounded-full flex items-center justify-center text-3xl mb-4">
+                    <i class="ph ph-users"></i>
+                </div>
+                <h4 class="font-bold mb-2">Human Capital</h4>
+                <p class="text-xs text-stone-500">Developing people with shared worldview.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Philosophical Framework</span>
+            <span>Slide 5 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 6: MIT Sloan Canvas Intro -->
+    <section class="slide">
+        <div class="grid grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="text-xs font-bold text-red-600 uppercase tracking-widest mb-2">The Tool</div>
+                <h2 class="text-4xl mb-6">MIT Sloan Deeptech Strategy Playbook</h2>
+                <p class="text-lg text-stone-600 mb-6">
+                    Adapted from <em>"The Incumbent's Deep Tech Strategy Playbook"</em>. We focus on two critical axes:
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-stone-900 text-white w-8 h-8 rounded flex items-center justify-center font-bold">1</div>
+                        <div>
+                            <h4 class="font-bold">Urgency (Problem)</h4>
+                            <p class="text-sm text-stone-500">What challenges are emerging or amplified in your industry right now?</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-stone-900 text-white w-8 h-8 rounded flex items-center justify-center font-bold">2</div>
+                        <div>
+                            <h4 class="font-bold">Innovation Momentum (Technology)</h4>
+                            <p class="text-sm text-stone-500">Which scientific advances are now available to address this?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Simplified Visual Canvas -->
+            <div class="bg-white p-6 rounded-lg border border-stone-300 shadow-xl relative">
+                <div class="absolute -top-3 -right-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">MIT Sloan Layout</div>
+                <div class="grid grid-cols-2 gap-4 h-64">
+                    <div class="bg-stone-50 border border-dashed border-stone-300 flex items-center justify-center text-center p-4">
+                        <span class="text-xs font-bold text-stone-400">Research<br>Gap</span>
+                    </div>
+                    <div class="bg-red-50 border-2 border-red-200 flex flex-col items-center justify-center text-center p-4">
+                        <i class="ph ph-target text-3xl text-red-500 mb-2"></i>
+                        <span class="text-sm font-bold text-red-700">Strategic<br>Sweet Spot</span>
+                    </div>
+                    <div class="bg-stone-50 border border-dashed border-stone-300 flex items-center justify-center text-center p-4">
+                        <span class="text-xs font-bold text-stone-400">Irrelevant<br>Science</span>
+                    </div>
+                    <div class="bg-stone-50 border border-dashed border-stone-300 flex items-center justify-center text-center p-4">
+                        <span class="text-xs font-bold text-stone-400">Market<br>Noise</span>
+                    </div>
+                </div>
+                <div class="mt-4 text-center text-xs text-stone-400">Technology Momentum (X) vs. Problem Urgency (Y)</div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Framework Introduction</span>
+            <span>Slide 6 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 7: The Questions -->
+    <section class="slide">
+        <h2 class="text-4xl mb-12 text-center">Deconstructing the Canvas</h2>
+        
+        <div class="grid grid-cols-2 gap-8">
+            <!-- Question 1 -->
+            <div class="card relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-2 h-full bg-stone-900"></div>
+                <h3 class="text-2xl font-bold mb-4 ml-2">Step 1: The Problem</h3>
+                <p class="text-stone-600 mb-6 ml-2">Define the Customer & The Unit Economics.</p>
+                <div class="bg-stone-100 p-4 rounded ml-2 text-sm">
+                    <strong>Critical Question:</strong><br>
+                    "What is the specific economic bleeding point for the customer?"
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="card relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-2 h-full bg-red-600"></div>
+                <h3 class="text-2xl font-bold mb-4 ml-2">Step 2: The Technology</h3>
+                <p class="text-stone-600 mb-6 ml-2">Define the Unfair Advantage.</p>
+                <div class="bg-red-50 p-4 rounded ml-2 text-sm text-red-900">
+                    <strong>Critical Question:</strong><br>
+                    "Why is your scientific solution the ONLY viable option? (No alternatives)"
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Deep Dive</span>
+            <span>Slide 7 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 8: The Formula -->
+    <section class="slide bg-stone-900 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-serif text-stone-400 mb-8">The Narrative Equation</h2>
+            
+            <div class="flex items-center justify-center gap-6 text-2xl md:text-4xl font-bold mb-12">
+                <span class="text-red-400">Problem (Economics)</span>
+                <i class="ph ph-plus text-stone-500"></i>
+                <span class="text-blue-400">Technology (Positioning)</span>
+                <i class="ph ph-equals text-stone-500"></i>
+                <span class="text-white border-b-4 border-white pb-2">Compelling Narrative</span>
+            </div>
+
+            <div class="text-left bg-stone-800 p-8 rounded-xl border border-stone-700">
+                <h4 class="text-stone-400 uppercase text-xs tracking-widest mb-4">Example: Starcloud (Space Data Center)</h4>
+                <p class="text-lg leading-relaxed font-serif italic">
+                    "<span class="text-red-400">AI compute energy costs are rising by 50% YoY due to cooling requirements on Earth.</span> 
+                    <span class="text-blue-400">By positioning data centers in orbit, we utilize the natural vacuum of space for free cooling and unlimited solar energy,</span> 
+                    <span class="text-white">cutting OPEX by 80% and solving the green AI crisis.</span>"
+                </p>
+            </div>
+        </div>
+        <div class="slide-footer border-stone-700">
+            <span>Synthesis</span>
+            <span>Slide 8 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 9: Activity 1 -->
+    <section class="slide">
+        <div class="flex flex-col items-center justify-center text-center h-full">
+            <div class="w-24 h-24 bg-red-600 rounded-full flex items-center justify-center mb-8 animate-pulse">
+                <i class="ph ph-pencil-simple text-4xl text-white"></i>
+            </div>
+            <h2 class="text-5xl mb-4">Sprint Activity 01</h2>
+            <p class="text-xl text-stone-600 mb-8">Open the Google Doc Worksheet.</p>
+            
+            <div class="bg-white p-4 rounded-xl shadow-lg border border-stone-200 mb-8">
+                <!-- Placeholder QR -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://docs.google.com" alt="QR Code" class="w-48 h-48">
+                <p class="mt-2 text-xs text-stone-400 font-mono">Scan to access Worksheet</p>
+            </div>
+
+            <div class="max-w-xl text-stone-500">
+                <strong>Task:</strong> Answer Question 1 (Problem) and Question 2 (Technology). Then, combine them into your <strong>Sovereign Positioning Statement</strong>.
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Interactive Session</span>
+            <span>Slide 9 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 10: Part 2 Intro -->
+    <section class="slide">
+        <div class="flex items-center gap-4 mb-8">
+            <span class="text-6xl font-serif text-stone-200">02</span>
+            <h2 class="text-5xl text-stone-900">MVP Development Strategy</h2>
+        </div>
+        <p class="text-xl text-stone-600 mb-12 max-w-3xl">
+            We have the story. Now we need the <strong>Funding Bridge</strong>. How do we get from a "Science Project" to a "Fundable Product"?
+        </p>
+
+        <div class="grid grid-cols-2 gap-8">
+            <div class="card hover:border-red-500 transition cursor-pointer">
+                <i class="ph ph-rocket-launch text-4xl text-red-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Tool A: Moonshot to Near-Term Canvas</h3>
+                <p class="text-sm text-stone-500">Breaking down the massive vision into sellable adjacent products.</p>
+            </div>
+            <div class="card hover:border-red-500 transition cursor-pointer">
+                <i class="ph ph-list-checks text-4xl text-red-600 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Tool B: Mission Objectives & Requirements</h3>
+                <p class="text-sm text-stone-500">Specific technical specs derived from customer needs (LOIs).</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Strategy to Execution</span>
+            <span>Slide 10 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 11: The Moonshot Canvas (Custom Layout) -->
+    <section class="slide bg-stone-50">
+        <h2 class="text-2xl mb-4 flex items-center gap-2">
+            <i class="ph ph-file-text text-red-600"></i> The Moonshot to Near-Term Strategy Canvas
+        </h2>
+        
+        <!-- THE CANVAS -->
+        <div class="moonshot-canvas shadow-2xl">
+            
+            <!-- LEFT COLUMN: CORE DEEPTECH MVP -->
+            <div class="canvas-col canvas-col-border-r">
+                <div class="h-full flex flex-col gap-4">
+                    <div class="canvas-section flex-1 bg-white">
+                        <div class="canvas-label">MVP Development Strategy</div>
+                        <div class="text-stone-400 italic mt-4 text-center p-4">
+                            Step 1: Simulations<br>
+                            Step 2: Physical Proto (RM100k)
+                        </div>
+                    </div>
+                    <div class="canvas-section flex-1 bg-stone-100">
+                        <div class="canvas-label">Core Deeptech MVP</div>
+                        <div class="text-stone-400 italic mt-4 text-center">
+                            The "Monkey" (Hardest Part)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MIDDLE COLUMN: ADJACENT PRODUCT -->
+            <div class="canvas-col">
+                <div class="canvas-section h-1/3">
+                    <div class="canvas-label">Strategic Positioning (Adjacent)</div>
+                    <p class="text-[0.6rem] text-stone-500 mt-2">Narrative for the near-term product.</p>
+                </div>
+                
+                <div class="canvas-section h-1/3 border-red-300 bg-red-50">
+                    <div class="canvas-label text-red-700">Adjacent Product / Solution</div>
+                    <div class="h-full flex items-center justify-center text-center font-bold text-red-900">
+                        Near-Term Commercial Win
+                        <br><span class="text-[0.6rem] font-normal">(Funds the Moonshot)</span>
+                    </div>
+                </div>
+
+                <div class="canvas-section h-1/3 bg-stone-100">
+                    <div class="canvas-label">Chosen Core Tech Subsystem</div>
+                    <div class="h-full flex items-center justify-center text-center text-stone-500 text-xs">
+                        Selected from Right Column
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: MOONSHOT -->
+            <div class="canvas-col canvas-col-border-l">
+                <div class="canvas-section h-1/4">
+                    <div class="canvas-label">Compelling Narrative</div>
+                    <p class="text-[0.6rem] text-stone-500 mt-2">The "Big Vision" Story.</p>
+                </div>
+                
+                <div class="canvas-section h-1/4 border-blue-200 bg-blue-50">
+                    <div class="canvas-label text-blue-700">Moonshot Solution</div>
+                    <div class="h-full flex items-center justify-center text-center font-bold text-blue-900">
+                        The Ultimate Goal
+                    </div>
+                </div>
+
+                <div class="canvas-section h-1/2">
+                    <div class="canvas-label">Technology Subsystems List</div>
+                    <ul class="list-disc pl-4 pt-4 text-[0.65rem] text-stone-500 space-y-2">
+                        <li>Subsystem A</li>
+                        <li>Subsystem B</li>
+                        <li>Subsystem C</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="slide-footer">
+            <span>The Master Tool</span>
+            <span>Slide 11 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 12: Monkey & Pedestal -->
+    <section class="slide">
+        <div class="grid grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl mb-6">How to choose the Subsystem?</h2>
+                <h3 class="text-2xl font-serif text-red-600 mb-6 italic">"The Monkey and The Pedestal"</h3>
+                <p class="text-lg text-stone-600 mb-4">
+                    <strong>Astro Teller (Captain of Moonshots at Google X):</strong>
+                </p>
+                <div class="bg-stone-100 p-6 rounded-lg border-l-4 border-stone-800">
+                    <p class="text-stone-800 italic">
+                        "If you're trying to get a monkey to recite Shakespeare on a pedestal, don't start by building the pedestal. Building the pedestal is easy. All the risk is in training the monkey."
+                    </p>
+                </div>
+                <p class="mt-6 text-sm font-bold">
+                    Your Core Deeptech MVP must be the Monkey (The Hardest Tech Risk), not the Pedestal (The Easy Stuff).
+                </p>
+            </div>
+            <div class="flex justify-center">
+                <div class="w-80 h-80 bg-red-50 rounded-full flex items-center justify-center relative">
+                    <i class="ph ph-warning-octagon text-9xl text-red-200"></i>
+                    <div class="absolute inset-0 flex items-center justify-center font-bold text-red-800 text-center px-8">
+                        Identify your Technical Moat.<br>That is your Monkey.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Prioritization Logic</span>
+            <span>Slide 12 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 13: Activity 2 -->
+    <section class="slide">
+        <div class="flex flex-col items-center justify-center text-center">
+            <h2 class="text-4xl mb-4">Sprint Activity 02</h2>
+            <p class="text-xl text-stone-600 mb-8">Worksheet: The Moonshot Canvas</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl text-left">
+                <div class="card">
+                    <div class="text-red-600 font-bold mb-2">Step 1</div>
+                    <p class="text-sm">List all Tech Subsystems for your Moonshot (Right Col).</p>
+                </div>
+                <div class="card">
+                    <div class="text-red-600 font-bold mb-2">Step 2</div>
+                    <p class="text-sm">Identify the "Monkey" (Core Subsystem) & Move to Middle Col.</p>
+                </div>
+                <div class="card">
+                    <div class="text-red-600 font-bold mb-2">Step 3</div>
+                    <p class="text-sm">Brainstorm Adjacent Products derived from that Core Subsystem.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Filling the Canvas</span>
+            <span>Slide 13 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 14: Adjacent Products & Traction -->
+    <section class="slide">
+        <h2 class="text-4xl mb-8">The Near-Term Strategy</h2>
+        <p class="text-xl text-stone-600 mb-8 max-w-3xl">
+            We don't build the Moonshot immediately. We build the Adjacent Product to fund the Moonshot.
+        </p>
+
+        <div class="card bg-stone-900 text-white p-8">
+            <h3 class="text-2xl font-bold mb-4 text-red-400">Targeting Traction</h3>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <p class="mb-4">For the identified Adjacent Product, we repeat the <strong>Strategic Positioning</strong> process.</p>
+                    <ul class="space-y-3 text-sm text-stone-300">
+                        <li><i class="ph ph-check text-green-400"></i> Different Customer?</li>
+                        <li><i class="ph ph-check text-green-400"></i> Different Industry?</li>
+                        <li><i class="ph ph-check text-green-400"></i> Different Packaging?</li>
+                    </ul>
+                </div>
+                <div class="border-l border-stone-700 pl-8 flex flex-col justify-center">
+                    <strong class="text-xl mb-2">The Goal: LOIs</strong>
+                    <p class="text-sm text-stone-400">
+                        Get Letters of Intent (LOIs) for this specific adjacent product. This proves traction to investors/grant providers before you build the full Moonshot.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Market Entry</span>
+            <span>Slide 14 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 15: Mission Objectives vs Requirements -->
+    <section class="slide">
+        <h2 class="text-4xl mb-6">Defining Specs: The Space Industry Way</h2>
+        <p class="text-stone-600 mb-8">Don't guess features. derive them.</p>
+
+        <div class="w-full max-w-5xl mx-auto space-y-6">
+            
+            <!-- Mission Requirements -->
+            <div>
+                <h4 class="font-bold text-red-600 mb-2 uppercase tracking-widest text-xs">1. Mission Requirements (The Means)</h4>
+                <table class="w-full text-sm mission-table shadow-sm">
+                    <thead>
+                        <tr>
+                            <th width="30%">Requirement ID</th>
+                            <th width="40%">Technical Specification</th>
+                            <th width="30%">Source (Customer/Standard)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>REQ-PWR-001</td>
+                            <td>Battery density > 250 Wh/kg</td>
+                            <td>Customer A (Drone Operator) Range constraint</td>
+                        </tr>
+                        <tr>
+                            <td>REQ-ENV-003</td>
+                            <td>Operate at -40°C</td>
+                            <td>Defense Standard 00-35</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex justify-center">
+                <i class="ph ph-arrow-up text-3xl text-stone-300"></i>
+            </div>
+
+            <!-- Mission Objectives -->
+            <div>
+                <h4 class="font-bold text-blue-600 mb-2 uppercase tracking-widest text-xs">2. Mission Objectives (The Ends)</h4>
+                <table class="w-full text-sm mission-table shadow-sm">
+                    <thead>
+                        <tr>
+                            <th width="30%" class="!bg-blue-900">Objective ID</th>
+                            <th width="40%" class="!bg-blue-900">Mission Goal</th>
+                            <th width="30%" class="!bg-blue-900">Success Criteria</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>OBJ-PRI-01</td>
+                            <td>Extend drone flight time</td>
+                            <td>Flight > 45 minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="slide-footer">
+            <span>Technical Specifications</span>
+            <span>Slide 15 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 16: Activity 3 -->
+    <section class="slide">
+        <div class="flex flex-col items-center justify-center text-center">
+            <h2 class="text-4xl mb-4">Sprint Activity 03</h2>
+            <p class="text-xl text-stone-600 mb-8">Worksheet: Mission Matrix</p>
+            <div class="bg-stone-50 p-8 rounded-xl border border-stone-200 max-w-2xl">
+                <p class="mb-4 font-bold">Translate your Adjacent Product Customer's "wants" into "Specs".</p>
+                <ul class="text-left space-y-2 text-stone-600 text-sm">
+                    <li>1. Define 1 Primary Mission Objective (What must it achieve?).</li>
+                    <li>2. Derive 2 Critical Mission Requirements (What must it be built to do?).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Defining the Build</span>
+            <span>Slide 16 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 17: Simulation as MVP -->
+    <section class="slide">
+        <h2 class="text-4xl mb-8">MVP Development Strategy</h2>
+        
+        <div class="grid grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Step 1: Simulation is the MVP</h3>
+                <p class="text-stone-600 mb-6">
+                    Before bending metal, bend bits. Deeptech investors accept high-fidelity simulations as proof of concept.
+                </p>
+                <div class="card bg-stone-50 border-stone-200">
+                    <strong class="text-stone-900">Case Study: Hermeus</strong>
+                    <p class="text-xs text-stone-500 mt-2">
+                        Hypersonic jet startup accepted into YCombinator. Their "MVP" was not a plane, but a verified computational fluid dynamics (CFD) simulation of the engine intake.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-l border-stone-200 pl-12">
+                <h3 class="text-2xl font-bold mb-4">Step 2: The RM 100k Challenge</h3>
+                <p class="text-stone-600 mb-6">
+                    Can we build the <strong>Core Tech Subsystem (The Monkey)</strong> using only Cradle CIP Spark (RM 100k) in 1.5 years?
+                </p>
+                <ul class="space-y-4 text-sm font-medium">
+                    <li class="flex items-center gap-2 text-green-700">
+                        <i class="ph ph-check-circle"></i> Yes, if you focus ONLY on the Subsystem.
+                    </li>
+                    <li class="flex items-center gap-2 text-red-700">
+                        <i class="ph ph-x-circle"></i> No, if you try to build the whole Moonshot.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Lean Execution</span>
+            <span>Slide 17 / 18</span>
+        </div>
+    </section>
+
+    <!-- Slide 18: Closing -->
+    <section class="slide text-center">
+        <h2 class="text-6xl mb-6 font-serif">Mission Complete</h2>
+        <p class="text-xl text-stone-600 mb-12 max-w-2xl mx-auto">
+            You now have a <span class="text-red-600 font-bold">Strategic Narrative</span> and a <span class="text-blue-600 font-bold">Prioritized Technical Roadmap</span>.
+        </p>
+
+        <div class="grid grid-cols-2 gap-8 max-w-4xl mx-auto mb-12 text-left">
+            <div class="card bg-stone-50">
+                <h4 class="font-bold mb-2">Next Steps</h4>
+                <ul class="text-sm space-y-2 text-stone-600">
+                    <li>1. Refine the Mission Requirements Table.</li>
+                    <li>2. Start the "Monkey" Simulations.</li>
+                    <li>3. Draft the LOI for Adjacent Customers.</li>
+                </ul>
+            </div>
+            <div class="card bg-stone-900 text-white">
+                <h4 class="font-bold mb-2">Need Technical Depth?</h4>
+                <p class="text-sm text-stone-400 mb-4">
+                    If you need help writing the feasibility papers for Column B (Tech Subsystems).
+                </p>
+                <a href="#" class="text-xs font-bold uppercase tracking-widest text-red-400 hover:text-white">Book Technical Consult -></a>
+            </div>
+        </div>
+
+        <div class="text-sm text-stone-400">
+            &copy; 2026 Deeptech Initiative. Building the Future.
+        </div>
+        <div class="slide-footer">
+            <span>End of Sprint 01</span>
+            <span>Slide 18 / 18</span>
+        </div>
+    </section>
+
+</body>
+</html>
